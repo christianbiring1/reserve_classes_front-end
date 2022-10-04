@@ -4,17 +4,15 @@ function Registration() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const password_confirmationRef = useRef(null);
 
-  const [user, setuser] = useState({name: '', email:'', password: '', password_confirmation: ''});
+  // const [user, setuser] = useState({name: '', email:'', password: ''});
 
   const hanldeSubmit= (e) => {
     axios.post('http://localhost:3001/registrations', {
     user: {
-      name: user.name,
-      email: user.email,
-      password: user.password,
-      password_confirmation: user.passwordConfirmation
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
     }
   },
   { withCredentials: true }
@@ -23,18 +21,17 @@ function Registration() {
   }).catch(error => {
     console.log('regitration error', error);
   });
-  console.log(user);
+  console.log(nameRef.current.value);
     e.preventDefault();
   }
 
-  const hanldeChange = (e) => {
-    setuser({
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
-      password_confirmation: password_confirmationRef.current.value
-    })
-  }
+  // const hanldeChange = (e) => {
+  //   setuser({
+  //     name: nameRef.current.value,
+  //     email: emailRef.current.value,
+  //     password: passwordRef.current.value,
+  //   })
+  // }
   return (
     <div>
       <form onSubmit={hanldeSubmit}>
@@ -44,7 +41,7 @@ function Registration() {
           id="name"
           placeholder='Name'
           ref={nameRef}
-          onChange={hanldeChange}
+          // onChange={hanldeChange}
           required
         /><br/>
         <input
@@ -53,7 +50,7 @@ function Registration() {
           id="email"
           placeholder='Email'
           ref={emailRef}
-          onChange={hanldeChange}
+          // onChange={hanldeChange}
           required
         /><br />
         <input
@@ -62,16 +59,7 @@ function Registration() {
           id="password"
           placeholder='Password'
           ref={passwordRef}
-          onChange={hanldeChange}
-          required
-        /><br />
-        <input
-          type="password"
-          name="password_confirmation"
-          id="password_confirmation"
-          placeholder='Password Confirmation'
-          ref={password_confirmationRef}
-          onChange={hanldeChange}
+          // onChange={hanldeChange}
           required
         /><br />
         <button type='submit'>Register</button>
