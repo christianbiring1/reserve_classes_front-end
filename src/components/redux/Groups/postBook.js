@@ -2,7 +2,7 @@ import React, {  useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import Select from 'react-select';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { addgroup } from './AddGroup';
 function PostGroup(){
     
@@ -13,7 +13,7 @@ function PostGroup(){
     const group = {
         title,name,decription,rating
     }
-}
+
 const dispatch =useDispatch();
 const handleSubmit = (e)=> {
     e.preventDefault();
@@ -27,4 +27,5 @@ const handleSubmit = (e)=> {
       }
       , 1000);
 
+}
 }
