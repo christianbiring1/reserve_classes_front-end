@@ -8,12 +8,12 @@ const initialState = {
 export const fetchReservation = createAsyncThunk('reservation/fetchReservation', () => axios.get('http://127.0.0.1:3001/reservations').then((response) => response.data));
 
 const reservationSlice = createSlice({
-    name: 'reserve',
+    name: 'reservedClass',
     initialState,
     extraReducers: (builder) => {
         builder.addCase(fetchReservation.fulfilled, (state, action) => {
             // eslint-disable-next-line no-param-reassign
-            state.reserve = action.payload;
+            state.reservations = action.payload;
         });
     },
 });
