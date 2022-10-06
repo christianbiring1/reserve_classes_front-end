@@ -5,18 +5,14 @@ REMOVE_CLASS:'REMOVE_CLASS',
 EDIT_CLASS:'EDIT_CLASS',
 }
 
-// export const getgroups = () => async (dispatch) =>{
-// const groupsFromApi = await fetch(baseURL)
-// .then((res) =>console.log(res.json()))
-// dispatch({ type: ACTIONS.GET_CLASS, payload:groupsFromApi})
-// }
+
 export const getgroups = () => async (dispatch) =>{
 
 fetch(baseURL).then(function (response) {
 	// The API call was successful!
 	return response.json();
 }).then(function (data) {
-	console.log(data);
+	// console.log(data);
   dispatch({ type: ACTIONS.GET_CLASS, payload:data})
 }).catch(function (err) {
 	// There was an error
