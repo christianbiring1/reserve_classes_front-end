@@ -1,7 +1,7 @@
 import { configureStore,applyMiddleware } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 import { combineReducers } from "@reduxjs/toolkit";
-import groupsReducer from "./Groups/AddGroup";
+import groupsReducer from "./Groups/GroupReducer";
 const rootReducer = combineReducers({
     groups:groupsReducer
     })
