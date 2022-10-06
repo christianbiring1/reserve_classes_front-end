@@ -6,6 +6,8 @@ import AddGroup from './components/redux/Groups/AddGroup';
 import DashBoard from './components/Dashboard';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
+import PostGroup from './components/redux/Groups/PostGroup';
+
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
           <Route exact path="/dashboard" element={<DashBoard />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
-          <Route exact path ="groups/add" element={<AddGroup />} />
+          <Route exact path="groups/add" element={<AddGroup />} />
+          <Route exact path="/add" element={<PostGroup />} />
         </Routes>
       </BrowserRouter>
     </div>
