@@ -3,7 +3,7 @@ ADD_CLASS:'ADD_CLASS',
 REMOVE_CLASS:'REMOVE_CLASS',
 EDIT_CLASS:'EDIT_CLASS',
 }
- const baseURL = 'http://localhost:3000/groups'
+ const baseURL = 'http://localhost:3001/groups'
  export const addgroup=(group) => async (dispatch) =>{
  await fetch(baseURL, {
   method:'POST',

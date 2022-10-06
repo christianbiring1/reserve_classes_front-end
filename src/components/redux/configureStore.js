@@ -5,6 +5,7 @@ import groupsReducer from "./Groups/AddGroup";
 const rootReducer = combineReducers({
     groups:groupsReducer
     })
+    
     const store = configureStore({
         reducer:rootReducer,
         middleware:[applyMiddleware(thunk)],

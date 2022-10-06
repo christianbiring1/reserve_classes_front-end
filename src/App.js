@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import AddGroup from './components/redux/Groups/AddGroup';
 import DashBoard from './components/Dashboard';
+import PostGroup from './components/redux/Groups/PostGroup';
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/dashboard" element={<DashBoard />} />
         <Route exact path ="groups/add" element={<AddGroup />} />
+        <Route exact path ="/add" element={<PostGroup />} />
+
 
       </Routes>
       </BrowserRouter>
