@@ -2,7 +2,7 @@ import React, {  useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { addgroup } from './AddGroup';
+import { addgroup } from './GroupReducer';
 function PostGroup(){
     
     const [title,setTitle] = useState('');
@@ -69,7 +69,7 @@ return (
           placeholder="rating"
         />
         <div className="submitButton">
-          <button type="submit">ADD BOOK</button>
+          <button type="submit">ADD GROUP</button>
         </div>
       </div>
     </form>

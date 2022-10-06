@@ -2,11 +2,12 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import AddGroup from './components/redux/Groups/AddGroup';
+import AddGroup from './components/redux/Groups/GroupReducer';
 import DashBoard from './components/Dashboard';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
 import PostGroup from './components/redux/Groups/PostGroup';
+import GetGroups from './components/redux/Groups/GetGroups';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/newreservation" element={<NewReservation />} />
           <Route exact path="groups/add" element={<AddGroup />} />
           <Route exact path="/add" element={<PostGroup />} />
+          <Route exact path ="/groups" element={<GetGroups />} />
         </Routes>
       </BrowserRouter>
     </div>
