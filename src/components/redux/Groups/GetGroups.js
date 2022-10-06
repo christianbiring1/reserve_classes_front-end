@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
+import GroupList from './GroupList';
 import { getgroups } from './GroupReducer'
 
 function GetGroups() {
@@ -9,12 +10,29 @@ function GetGroups() {
 const groups = useSelector((state)=>state.groups);
 useEffect(()=>{
     dispatch(getgroups())
-},[dispatch])
+},[])
 
+console.log(groups)
 
   return (
-    <div>GetGroups</div>
+
+    <>
+    
+    <h4>GetGroups</h4>
+    <ul>
+
+{groups.length>0 ? groups[0].map((group) => (
+  <GroupList
+    groupprop={group}
+    key={group.id}
+  />
+
+)) : 'Please wait...'}
+
+</ul>
+    
+    </>
   )
 }
 
-export default GetGroups
+export default GetGroups 
