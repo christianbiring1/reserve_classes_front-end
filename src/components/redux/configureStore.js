@@ -9,7 +9,6 @@ const rootReducer = combineReducers({
 const store = configureStore({
   reducer: rootReducer,
   middleware: [applyMiddleware(thunk)],
-//   middleware: [thunk],
 });
 
 export const useStore = () => store;
