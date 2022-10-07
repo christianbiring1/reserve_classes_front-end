@@ -13,13 +13,13 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/dashboard" element={<DashBoard />} />
-        <Route exact path ="groups/add" element={<AddGroup />} />
-        <Route exact path ="/add" element={<PostGroup />} />
-        <Route exact path ="/groups" element={<GetGroups />} />
-      </Routes>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/dashboard" element={<DashBoard />} />
+          <Route exact path="groups/add" element={<AddGroup />} />
+          <Route exact path="/add" element={<PostGroup />} />
+          <Route exact path="/groups" element={<GetGroups />} />
+        </Routes>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/dashboard" element={<DashBoard />} />
