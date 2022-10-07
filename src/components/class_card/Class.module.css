@@ -17,6 +17,12 @@
   height: 200px;
   background-color: var(--primary);
   border-radius: 50%;
+  transition: all 0.2s ease-out;
+}
+
+.class img:hover {
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
 }
 
 .classInfo {
