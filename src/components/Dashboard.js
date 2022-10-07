@@ -6,7 +6,7 @@ function DashBoard() {
     <div>
       <h1>Dashboard</h1>
       <h1>Dashboard</h1>
-      <Navbar/>
+      <Navbar />
     </div>
   );
 }

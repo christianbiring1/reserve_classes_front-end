@@ -8,10 +8,10 @@ function GetGroups() {
   const dispatch = useDispatch();
 
   const groups = useSelector((state) => state.groups.groupList);
-  console.log(groups)
+  console.log(groups);
   useEffect(() => {
-    dispatch(fetchGroups())
-  }, [])
+    dispatch(fetchGroups());
+  }, []);
 
   return (
 
@@ -31,7 +31,7 @@ function GetGroups() {
       </ul>
 
     </>
-  )
+  );
 }
 
-export default GetGroups 
+export default GetGroups;

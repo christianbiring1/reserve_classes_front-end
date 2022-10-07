@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import { configureStore } from '@reduxjs/toolkit';
 import reserveSlice from './reserveSlice';
 import newGroupSlice from './newGroupSlice';
@@ -7,7 +8,7 @@ const store = configureStore({
   reducer: {
     reserve: reserveSlice,
     groups: groupSlice,
-    newgroups: newGroupSlice
+    newgroups: newGroupSlice,
   },
 });
 
