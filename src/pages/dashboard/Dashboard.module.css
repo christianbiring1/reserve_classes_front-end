@@ -1,0 +1,21 @@
+.headline {
+  margin: 10rem 0 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headline h1 {
+  font-weight: 700;
+}
+
+.headline p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.seperator {
+  border-bottom: 3px #bbb dotted;
+  display: block;
+  width: 7%;
+}
