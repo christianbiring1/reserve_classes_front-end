@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import AddGroup from './components/redux/Groups/GroupReducer';
-import DashBoard from './components/Dashboard';
+import DashBoard from './pages/Dashboard';
 import PostGroup from './components/redux/Groups/PostGroup';
 import GetGroups from './components/redux/Groups/GetGroups';
 import Reservations from './components/Reservations';
