@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
+import AddGroup from './components/redux/Groups/AddGroup';
 import DashBoard from './components/Dashboard';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/dashboard" element={<DashBoard />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
+          <Route exact path ="groups/add" element={<AddGroup />} />
         </Routes>
       </BrowserRouter>
     </div>
