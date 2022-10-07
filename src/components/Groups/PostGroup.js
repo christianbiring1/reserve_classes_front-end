@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 import { newgroup } from '../../redux/newGroupSlice';
 // import newGroupSlice, { newgroup } from '../../redux/newGroupSlice';
 function PostGroup() {
-
   const [title, setTitle] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -17,15 +15,15 @@ function PostGroup() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(newgroup({ title, name, description, rating }));
+    dispatch(newgroup({
+      title, name, description, rating,
+    }));
     setTitle('');
     setRating('');
     setDescription('');
     setName('');
+  };
 
-
-  }
-  
   return (
 
     <div>
@@ -72,12 +70,3 @@ function PostGroup() {
 }
 
 export default PostGroup;
-
-
-
-
-
-
-
-
-

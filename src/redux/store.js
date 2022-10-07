@@ -7,7 +7,7 @@ const store = configureStore({
   reducer: {
     reserve: reserveSlice,
     groups: groupSlice,
-    newgroups: newGroupSlice
+    newgroups: newGroupSlice,
   },
 });
 
