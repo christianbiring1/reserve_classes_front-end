@@ -2,4 +2,36 @@
   border: 2px solid black;
   width: 250px;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.class img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.classInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.seperator {
+  border-bottom: 3px #6664 dotted;
+  display: block;
+  width: 50%;
+}
+
+.classInfo h5 {
+  font-weight: 700;
+}
+
+.classInfo p {
+  color: #777;
+  font-size: 14px;
 }
