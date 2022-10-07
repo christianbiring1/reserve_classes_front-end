@@ -1,6 +1,10 @@
+:root {
+  --primary: #97bf0f;
+}
+
 .class {
-  border: 2px solid black;
-  width: 250px;
+  padding: 8px;
+  width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -11,6 +15,7 @@
 .class img {
   width: 200px;
   height: 200px;
+  background-color: var(--primary);
   border-radius: 50%;
 }
 
@@ -34,4 +39,10 @@
 .classInfo p {
   color: #777;
   font-size: 14px;
+  text-align: center;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
 }

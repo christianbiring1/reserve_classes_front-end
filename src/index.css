@@ -12,3 +12,22 @@
   margin: 0;
   padding: 0;
 }
+
+.social_icon {
+  height: 28px;
+  width: 28px;
+  display: block;
+  filter: invert(70%);
+}
+
+.social_icon.twitter {
+  background: url(./assets/icons/twitter.png) no-repeat center center/cover;
+}
+
+.social_icon.facebook {
+  background: url(./assets/icons/facebook.png) no-repeat center center/cover;
+}
+
+.social_icon.instagram {
+  background: url(./assets/icons/instagram.png) no-repeat center center/cover;
+}
