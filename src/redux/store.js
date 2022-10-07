@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import reserveSlice from './reserveSlice';
+import newGroupSlice from './newGroupSlice';
+import groupSlice from './groupSlice';
 
 const store = configureStore({
   reducer: {
     reserve: reserveSlice,
+    groups: groupSlice,
+    newgroups: newGroupSlice
   },
 });
 

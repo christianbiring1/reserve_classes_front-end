@@ -2,12 +2,12 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import AddGroup from './components/redux/Groups/GroupReducer';
+import AddGroup from './components/Groups/GroupReducer';
 import DashBoard from './components/Dashboard';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
-import PostGroup from './components/redux/Groups/PostGroup';
-import GetGroups from './components/redux/Groups/GetGroups';
+import PostGroup from './components/Groups/PostGroup';
+import GetGroups from './components/Groups/GetGroups';
 
 
 function App() {
