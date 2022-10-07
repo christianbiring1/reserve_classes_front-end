@@ -14,12 +14,10 @@ function Registration() {
         password: passwordRef.current.value,
       },
     },
-    { withCredentials: true }).then((response) => {
-      console.log('registration response', response);
-    }).catch((error) => {
-      console.log('regitration error', error);
-    });
-    console.log(nameRef.current.value);
+    { withCredentials: true });
+    // .then((response) => {
+    // }).catch((error) => {
+    // });
     e.preventDefault();
   };
 
