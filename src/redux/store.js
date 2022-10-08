@@ -10,6 +10,9 @@ const store = configureStore({
     groups: groupSlice,
     newgroups: newGroupSlice,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 
 export default store;
