@@ -1,18 +1,15 @@
 import { useState } from 'react';
 
-const ReservationForm = () => {
+const ReservationForm = (props) => {
   const [newDate, setNewDate] = useState({
     date: '',
-    user_id: 0,
-    group_id: 0,
+    user_id: 1,
+    group_id: 1,
   });
 
-  const handleChange = (e) => {
-    console.log(e);
-  };
-
-  const handleSubmit = () => {
-    console.log(newDate);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.handleForm(newDate);
   };
 
   return (
@@ -23,7 +20,7 @@ const ReservationForm = () => {
           <input
             type="date"
             id="date"
-            value={newDate}
+            value={newDate.date}
             min="2020-01-01"
             max="2023-01-01"
             onChange={(e) => setNewDate({
