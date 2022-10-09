@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { sessionLogin } from '../redux/authentication/authentication';
 
-function Home() {
+function Splash() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const dispatch = useDispatch();
@@ -44,4 +44,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Splash;
