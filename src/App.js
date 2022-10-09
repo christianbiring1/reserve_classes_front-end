@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import Home from './components/Home';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Splash from './components/Splash';
 import AddGroup from './components/redux/Groups/GroupReducer';
 import DashBoard from './pages/dashboard/Dashboard';
 import PostGroup from './components/redux/Groups/PostGroup';
@@ -12,25 +12,32 @@ import { sessionIsLoggedIn } from './redux/authentication/authentication';
 
 function App() {
   const dispatch = useDispatch();
+  const session = useSelector((state) => state.session);
+  const isLoggedIn = session.logged_in;
 
   useEffect(() => {
     dispatch(sessionIsLoggedIn());
   }, [dispatch]);
 
   return (
-    <div className="App">
-      <BrowserRouter>
+    <>
+      {isLoggedIn && (
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/dashboard" element={<DashBoard />} />
+          <Route exact path="/" element={<DashBoard />} />
           <Route exact path="groups/add" element={<AddGroup />} />
           <Route exact path="/add" element={<PostGroup />} />
           <Route exact path="/groups" element={<GetGroups />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      )}
+      {!isLoggedIn && (
+      <Routes>
+        <Route exact path="/" element={<Splash />} />
+        <Route exact path="*" element={<Splash />} />
+      </Routes>
+      )}
+    </>
   );
 }
 
