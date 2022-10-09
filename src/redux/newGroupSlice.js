@@ -19,9 +19,9 @@ export const postGrp = async (hotel) => axios({
   data: hotel,
 });
 export const putGroup = createAsyncThunk(
-  'put_hotels',
-  async (hotels) => {
-    const response = await postGrp(hotels);
+  'put_group',
+  async (groups) => {
+    const response = await postGrp(group);
     return response.data;
   },
 );
