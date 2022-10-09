@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { sessionLogin } from '../redux/authentication/authentication';
 
 function Splash() {
@@ -39,6 +40,7 @@ function Splash() {
           <br />
           <button type="submit">Login</button>
         </form>
+        <Link to="/signup">Sign Up</Link>
       </div>
     </div>
   );

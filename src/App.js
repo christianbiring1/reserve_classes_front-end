@@ -9,6 +9,7 @@ import GetGroups from './components/redux/Groups/GetGroups';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
 import { sessionIsLoggedIn } from './redux/authentication/authentication';
+import Registration from './pages/dashboard/auth/Registartion';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
       {!isLoggedIn && (
       <Routes>
         <Route exact path="/" element={<Splash />} />
+        <Route exact path="/signup" element={<Registration />} />
         <Route exact path="*" element={<Splash />} />
       </Routes>
       )}
