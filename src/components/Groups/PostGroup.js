@@ -1,10 +1,9 @@
-/* eslint-disable consistent-return */
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import React, { useState, useReducer } from 'react';
 import { putGroup } from '../../redux/newGroupSlice';
 
-// import newGroupSlice, { newgroup } from '../../redux/newGroupSlice';
-const form = {
+const groupForm = {
   name: '',
   title: '',
   description: '',
@@ -43,9 +42,9 @@ const reducer = (state, action) => {
   }
 };
 function PostGroup() {
-  const dispatcher = useDispatch();
-
-  const [formState, dispatch] = useReducer(reducer, form);
+  const postToApi = useDispatch();
+  const navigate = useNavigate();
+  const [formState, dispatch] = useReducer(reducer, groupForm);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -56,28 +55,20 @@ function PostGroup() {
     }
     return true;
   };
-  // const group = {
-  //   title, name, description, rating
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsFormSubmitted(true);
     if (!isFormValid(formState)) return;
-
     const formData = new FormData();
-    console.log('regitration');
-
     formData.append('name', formState.name);
     formData.append('description', formState.description);
     formData.append('rating', formState.rating);
     formData.append('image', formState.image);
     formData.append('title', formState.title);
 
-    console.log(formData);
-
-    dispatcher(putGroup(formData));
-    setIsFormSubmitted(false);
+    postToApi(putGroup(formData));
+    navigate('/dashboard');
   };
 
   return (
@@ -113,11 +104,13 @@ function PostGroup() {
           />
           <input
             type="file"
+            accept="image/*"
+            multiple={false}
             name="image"
             onChange={(e) => dispatch({ type: 'image', payload: e.target.files[0] })}
           />
           {isFormSubmitted && (
-          <div className="text-yellow-200 border p-2 rounded bg-red-800 w-3/4 text-center">
+          <div>
             {errorMessage}
           </div>
           )}

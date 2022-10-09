@@ -7,18 +7,9 @@ const initialState = {
   groups: [],
 
 };
-const base='http://localhost:3001'
+ export const base='http://localhost:3001'
 
-// export const newgroup = createAsyncThunk(
-//   'new/Group',
-//   async ({
-//     formData,
-//   }) => await axios.post('http://localhost:3001/groups', {
 
-//     body: formData,
-
-//   }),
-// );
 export const postGrp = async (hotel) => axios({
   method: 'post',
   url: `${base}/groups`,

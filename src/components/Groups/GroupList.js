@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { base } from '../../redux/newGroupSlice';
 
 function GroupList(props) {
   const { groupprop } = props;
   const {
     title, name, description, rating, image,
   } = groupprop;
-  console.log(image);
   return (
     <li className="group_item">
       <p>{name}</p>
@@ -15,8 +15,9 @@ function GroupList(props) {
       <p>{rating}</p>
       <p>
         {' '}
-        <h6> here is the image</h6>
-        {image}
+
+        <img src={`${base}${image.url}`} alt="group" />
+
       </p>
 
       <div>
@@ -49,7 +50,7 @@ GroupList.propTypes = {
     title: PropTypes.string.isRequired,
     name: PropTypes.string,
     description: PropTypes.string.isRequired,
-    rating: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
     image: PropTypes.string,
 
   }).isRequired,
