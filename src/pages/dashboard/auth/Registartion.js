@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { sessionSignUp } from '../../redux/authentication/authentication';
+import { Link } from 'react-router-dom';
+import { sessionSignUp } from '../../../redux/authentication/authentication';
 
 function Registration() {
   const nameRef = useRef(null);
@@ -19,6 +20,7 @@ function Registration() {
 
   return (
     <div>
+      <h1>Sign Up</h1>
       <form onSubmit={hanldeSubmit}>
         <input
           type="text"
@@ -49,6 +51,7 @@ function Registration() {
         <br />
         <button type="submit">Register</button>
       </form>
+      <Link to="/">Login</Link>
     </div>
   );
 }
