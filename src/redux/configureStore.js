@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import reserveSlice from './reserveSlice';
+import updateSession from './authentication/authentication';
 
 const store = configureStore({
   reducer: {
-    reserve: reserveSlice,
+    session: updateSession,
   },
 });
 
