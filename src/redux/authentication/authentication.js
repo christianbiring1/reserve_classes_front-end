@@ -7,7 +7,7 @@ const checkLogin = (payload) => ({ type: 'CHECK_LOGIN', payload });
 const initialState = {
   loggedIn: false,
   user: {},
-  status: '',
+  error: '',
 };
 
 export const sessionLogin = (payload) => async (dispatch) => {

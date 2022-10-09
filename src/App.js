@@ -22,6 +22,9 @@ function App() {
 
   return (
     <>
+      {session.status && (
+        <h6 className="flash_notice">{session.status}</h6>
+      )}
       {isLoggedIn && (
         <Routes>
           <Route exact path="/" element={<DashBoard />} />
@@ -36,7 +39,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Splash />} />
         <Route exact path="/signup" element={<Registration />} />
-        <Route exact path="*" element={<Splash />} />
+        <Route exact path="*" element={<Splash flash />} />
       </Routes>
       )}
     </>

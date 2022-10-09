@@ -1,12 +1,14 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { sessionLogin } from '../redux/authentication/authentication';
 
-function Splash() {
+function Splash(props) {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const dispatch = useDispatch();
+  const { flash } = props;
 
   const hanldeSubmit = (e) => {
     dispatch(sessionLogin({
@@ -18,6 +20,9 @@ function Splash() {
   return (
     <div>
       <h1>Login</h1>
+      {flash && (
+        <h6 className="flash_warn">You must be logged in to continue.</h6>
+      )}
       <div>
         <form onSubmit={hanldeSubmit}>
           <input
@@ -45,5 +50,13 @@ function Splash() {
     </div>
   );
 }
+
+Splash.propTypes = {
+  flash: PropTypes.bool,
+};
+
+Splash.defaultProps = {
+  flash: false,
+};
 
 export default Splash;
