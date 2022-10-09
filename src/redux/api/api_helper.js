@@ -19,6 +19,13 @@ export const signUp = async (params) => axios({
     email: params.email,
     password: params.password,
   },
+  withCredentials: true,
+});
+
+export const checkLogin = async () => axios({
+  method: 'get',
+  url: `${URL}/logged_in`,
+  withCredentials: true,
 });
 
 export const logout = async () => axios({
