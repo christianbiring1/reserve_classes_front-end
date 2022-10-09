@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Home from './components/Home';
 import AddGroup from './components/redux/Groups/GroupReducer';
 import DashBoard from './pages/dashboard/Dashboard';
@@ -7,8 +8,15 @@ import PostGroup from './components/redux/Groups/PostGroup';
 import GetGroups from './components/redux/Groups/GetGroups';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
+import { sessionIsLoggedIn } from './redux/authentication/authentication';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(sessionIsLoggedIn());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <BrowserRouter>
