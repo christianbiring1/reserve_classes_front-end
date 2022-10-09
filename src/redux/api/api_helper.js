@@ -9,6 +9,7 @@ export const login = async (params) => axios({
     email: params.email,
     password: params.password,
   },
+  withCredentials: true,
 });
 
 export const signUp = async (params) => axios({

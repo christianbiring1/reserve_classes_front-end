@@ -46,7 +46,7 @@ export const sessionIsLoggedIn = (payload) => async (dispatch) => {
 const updateSession = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN':
-      return [...state, action.payload];
+      return action.payload;
     case 'SIGNUP':
       return action.payload;
     case 'CHECK_LOGIN':
