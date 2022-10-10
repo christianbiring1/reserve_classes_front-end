@@ -18,6 +18,20 @@ export const postGrp = async (hotel) => axios({
   },
   data: hotel,
 });
+export const deleteGrp = async (hotel) => axios({
+  method: 'delete',
+  url: `${base}/groups/${hotel}`,
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+});
+export const delGroup = createAsyncThunk(
+  'del_group',
+  async (group) => {
+    const response = await deleteGrp(group);
+    return response.data;
+  },
+);
 export const putGroup = createAsyncThunk(
   'put_group',
   async (groups) => {
