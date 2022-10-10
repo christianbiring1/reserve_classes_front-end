@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { sessionSignUp } from '../../../redux/authentication/authentication';
+import { sessionSignUp } from '../../redux/authentication/authentication';
 
 function Registration() {
   const nameRef = useRef(null);
