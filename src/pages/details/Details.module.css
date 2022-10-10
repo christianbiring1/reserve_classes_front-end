@@ -14,12 +14,12 @@
 }
 
 .main {
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
 }
 
 .image {
-  height: 100vh;
   flex: 2.5;
   display: flex;
   flex-direction: column;
@@ -84,6 +84,9 @@
 
 .infoList li {
   padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
 }
 
 .infoList li:nth-child(even) {
@@ -98,4 +101,10 @@
   color: #fff;
   font-weight: 600;
   background-color: var(--primary);
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
