@@ -8,7 +8,6 @@ function GetGroups() {
   const dispatch = useDispatch();
 
   const groups = useSelector((state) => state.groups.groupList);
-  console.log(groups);
   useEffect(() => {
     dispatch(fetchGroups());
   }, []);
@@ -26,7 +25,7 @@ function GetGroups() {
             key={group.id}
           />
 
-        )) : 'Please wait...'}
+        )) : 'Please wait...collecting data'}
 
       </ul>
 

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import { configureStore } from '@reduxjs/toolkit';
 import reserveSlice from './reserveSlice';
 // import/no-named-as-default
@@ -12,6 +13,9 @@ const store = configureStore({
     newgroups: newGroupSlice,
     newrsv: newReservationSlice,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 
 export default store;

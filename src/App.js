@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/dashboard" element={<DashBoard />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
-          <Route exact path="/add" element={<PostGroup />} />
+          <Route exact path="groups/add" element={<PostGroup />} />
           <Route exact path="/groups" element={<GetGroups />} />
         </Routes>
       </BrowserRouter>
