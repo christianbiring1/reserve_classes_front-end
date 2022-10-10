@@ -34,6 +34,7 @@ function App() {
           <Route exact path="/groups" element={<GetGroups />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
+          <Route exact path="/class/:id" element={<Details />} />
         </Routes>
       )}
       {!isLoggedIn && (
@@ -41,7 +42,6 @@ function App() {
         <Route exact path="/" element={<Splash />} />
         <Route exact path="/signup" element={<Registration />} />
         <Route exact path="*" element={<Splash flash />} />
-        <Route exact path="/class" element={<Details />} />
       </Routes>
       )}
     </>
