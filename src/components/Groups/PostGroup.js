@@ -75,7 +75,7 @@ function PostGroup() {
   return (
 
     <div>
-      <div>
+      <div className="nav_panel">
         <Navbar />
       </div>
       <form onSubmit={handleSubmit}>
