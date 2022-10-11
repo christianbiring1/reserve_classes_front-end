@@ -37,13 +37,3 @@
 .social_icon.instagram {
   background: url(./assets/icons/instagram.png) no-repeat center center/cover;
 }
-
-.group_item {
-  background-color: rebeccapurple;
-  margin-bottom: 30px;
-}
-
-.group_item p {
-  margin: 0;
-  padding: 0;
-}
