@@ -13,7 +13,7 @@ function Navbar() {
       <NavLink to="/reservations">
         MY RESERVATIONS
       </NavLink>
-      <NavLink to="/groups/add">
+      <NavLink to="/add">
         ADD CLASS
       </NavLink>
       <NavLink to="/">
