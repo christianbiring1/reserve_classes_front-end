@@ -5,17 +5,11 @@ import Splash from './components/Splash';
 import AddGroup from './components/redux/Groups/GroupReducer';
 import DashBoard from './pages/dashboard/Dashboard';
 import PostGroup from './components/redux/Groups/PostGroup';
-import GetGroups from './components/redux/Groups/GetGroups';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
-<<<<<<< HEAD
 import { sessionIsLoggedIn } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
 import Details from './pages/details/Details';
-=======
-import PostGroup from './components/Groups/PostGroup';
-import GetGroups from './components/Groups/GetGroups';
->>>>>>> develop
 
 function App() {
   const dispatch = useDispatch();
