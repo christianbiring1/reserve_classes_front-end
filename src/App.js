@@ -5,7 +5,7 @@ import Splash from './components/Splash';
 import AddGroup from './components/redux/Groups/GroupReducer';
 import DashBoard from './pages/dashboard/Dashboard';
 import PostGroup from './components/redux/Groups/PostGroup';
-import Reservations from './components/Reservations';
+import Reservation from './components/Reservations/index';
 import NewReservation from './components/Reservations/NewReservation';
 import { sessionIsLoggedIn } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
@@ -32,7 +32,7 @@ function App() {
           <Route exact path="/" element={<DashBoard />} />
           <Route exact path="groups/add" element={<AddGroup />} />
           <Route exact path="/add" element={<PostGroup />} />
-          <Route exact path="/reservations" element={<Reservations />} />
+          <Route exact path="/reservations" element={<Reservation />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
           <Route exact path="/class/:id" element={<Details />} />
         </Routes>

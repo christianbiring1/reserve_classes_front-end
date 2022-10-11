@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchReservation } from '../../redux/reserveSlice';
 import Navbar from '../Navbar';
 
-const Reservaion = () => {
+const Reservation = () => {
   const dispatch = useDispatch();
   const reserved = useSelector((state) => state.reserve.reservations);
 
@@ -45,4 +45,4 @@ const Reservaion = () => {
   );
 };
 
-export default Reservaion;
+export default Reservation;
