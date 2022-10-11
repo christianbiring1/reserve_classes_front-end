@@ -1,27 +1,48 @@
-import './App.css';
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import DashBoard from './components/Dashboard';
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Splash from './components/Splash';
+import AddGroup from './components/redux/Groups/GroupReducer';
+import DashBoard from './pages/dashboard/Dashboard';
+import PostGroup from './components/redux/Groups/PostGroup';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
-import PostGroup from './components/Groups/PostGroup';
-import GetGroups from './components/Groups/GetGroups';
+import { sessionIsLoggedIn } from './redux/authentication/authentication';
+import Registration from './pages/auth/Registartion';
+import Details from './pages/details/Details';
 
 function App() {
+  const dispatch = useDispatch();
+  const session = useSelector((state) => state.session);
+  const isLoggedIn = session.logged_in;
+
+  useEffect(() => {
+    dispatch(sessionIsLoggedIn());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <BrowserRouter>
+    <>
+      {session.status && (
+        <h6 className="flash_notice">{session.status}</h6>
+      )}
+      {isLoggedIn && (
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/dashboard" element={<DashBoard />} />
+          <Route exact path="/" element={<DashBoard />} />
+          <Route exact path="groups/add" element={<AddGroup />} />
+          <Route exact path="/add" element={<PostGroup />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
-          <Route exact path="groups/add" element={<PostGroup />} />
-          <Route exact path="/groups" element={<GetGroups />} />
+          <Route exact path="/class/:id" element={<Details />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      )}
+      {!isLoggedIn && (
+      <Routes>
+        <Route exact path="/" element={<Splash />} />
+        <Route exact path="/signup" element={<Registration />} />
+        <Route exact path="*" element={<Splash flash />} />
+      </Routes>
+      )}
+    </>
   );
 }
 

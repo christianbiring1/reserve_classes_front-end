@@ -1,3 +1,5 @@
+/* eslint-disable no-return-await */
+/* eslint-disable camelcase */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 

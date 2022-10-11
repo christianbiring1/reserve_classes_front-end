@@ -1,30 +1,26 @@
 import React, { useRef } from 'react';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { sessionSignUp } from '../../redux/authentication/authentication';
 
 function Registration() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const dispatch = useDispatch();
 
   const hanldeSubmit = (e) => {
-    axios.post('http://localhost:3001/registrations', {
-      user: {
-        name: nameRef.current.value,
-        email: emailRef.current.value,
-        password: passwordRef.current.value,
-      },
-    },
-    { withCredentials: true }).then((response) => {
-      console.log('registration response', response);
-    }).catch((error) => {
-      console.log('regitration error', error);
-    });
-    console.log(nameRef.current.value);
+    dispatch(sessionSignUp({
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    }));
     e.preventDefault();
   };
 
   return (
     <div>
+      <h1>Sign Up</h1>
       <form onSubmit={hanldeSubmit}>
         <input
           type="text"
@@ -55,6 +51,7 @@ function Registration() {
         <br />
         <button type="submit">Register</button>
       </form>
+      <Link to="/">Login</Link>
     </div>
   );
 }
