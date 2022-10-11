@@ -36,15 +36,9 @@ function App() {
           <Route exact path="/" element={<DashBoard />} />
           <Route exact path="groups/add" element={<AddGroup />} />
           <Route exact path="/add" element={<PostGroup />} />
-          <Route exact path="/groups" element={<GetGroups />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
-<<<<<<< HEAD
           <Route exact path="/class/:id" element={<Details />} />
-=======
-          <Route exact path="groups/add" element={<PostGroup />} />
-          <Route exact path="/groups" element={<GetGroups />} />
->>>>>>> develop
         </Routes>
       )}
       {!isLoggedIn && (
