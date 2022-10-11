@@ -6,7 +6,7 @@ function Navbar() {
     <div>
       Navbar
 
-      <NavLink to="/groups/addgroup">
+      <NavLink to="/groups/add">
         Add Class
         {' '}
         <h6>If admin</h6>

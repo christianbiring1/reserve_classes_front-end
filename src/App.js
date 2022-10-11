@@ -8,9 +8,14 @@ import PostGroup from './components/redux/Groups/PostGroup';
 import GetGroups from './components/redux/Groups/GetGroups';
 import Reservations from './components/Reservations';
 import NewReservation from './components/Reservations/NewReservation';
+<<<<<<< HEAD
 import { sessionIsLoggedIn } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
 import Details from './pages/details/Details';
+=======
+import PostGroup from './components/Groups/PostGroup';
+import GetGroups from './components/Groups/GetGroups';
+>>>>>>> develop
 
 function App() {
   const dispatch = useDispatch();
@@ -34,7 +39,12 @@ function App() {
           <Route exact path="/groups" element={<GetGroups />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
+<<<<<<< HEAD
           <Route exact path="/class/:id" element={<Details />} />
+=======
+          <Route exact path="groups/add" element={<PostGroup />} />
+          <Route exact path="/groups" element={<GetGroups />} />
+>>>>>>> develop
         </Routes>
       )}
       {!isLoggedIn && (
