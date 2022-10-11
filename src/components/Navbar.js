@@ -4,14 +4,21 @@ import { NavLink } from 'react-router-dom';
 function Navbar() {
   return (
     <div>
-      Navbar
-
-      <NavLink to="/groups/add">
-        Add Class
-        {' '}
-        <h6>If admin</h6>
+      <NavLink to="/">
+        CLASSES
       </NavLink>
-
+      <NavLink to="/newreservation">
+        RESERVE CLASS
+      </NavLink>
+      <NavLink to="/reservations">
+        MY RESERVATIONS
+      </NavLink>
+      <NavLink to="/groups/add">
+        ADD CLASS
+      </NavLink>
+      <NavLink to="/">
+        DELETE CLASS
+      </NavLink>
     </div>
   );
 }

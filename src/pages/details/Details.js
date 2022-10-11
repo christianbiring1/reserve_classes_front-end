@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import styles from './Details.module.css';
 import { fetchDetails } from '../../redux/classes/classes';
+import Navbar from '../../components/Navbar';
 
 export default function Details() {
   const dispatch = useDispatch();
@@ -18,6 +19,9 @@ export default function Details() {
     <section className={styles.main}>
       {classDetails.id && (
         <>
+          <div className="nav_panel">
+            <Navbar />
+          </div>
           <div className={styles.image}>
             <img src={classDetails.image} alt="" />
             <Link to="/" className={styles.backButton}>

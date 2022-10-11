@@ -10,6 +10,7 @@ import NewReservation from './components/Reservations/NewReservation';
 import { sessionIsLoggedIn } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
 import Details from './pages/details/Details';
+// import Navbar from './components/Navbar';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
         <h6 className="flash_notice">{session.status}</h6>
       )}
       {isLoggedIn && (
+        // <Navbar />
         <Routes>
           <Route exact path="/" element={<DashBoard />} />
           <Route exact path="groups/add" element={<AddGroup />} />
