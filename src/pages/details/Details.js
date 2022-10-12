@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import styles from './Details.module.css';
 import { fetchDetails } from '../../redux/classes/classes';
-import Navbar from '../../components/Navbar';
 import { URL } from '../../redux/api/api_helper';
 
 export default function Details() {
@@ -21,9 +20,6 @@ export default function Details() {
     <section className={styles.main}>
       {classDetails.id && (
         <>
-          <div className="nav_panel">
-            <Navbar />
-          </div>
           <div className={styles.image}>
             <img src={`${URL}${classDetails?.image?.url}`} alt="" />
 

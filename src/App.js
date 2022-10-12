@@ -10,6 +10,7 @@ import { sessionIsLoggedIn } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
 import GetGroups from './components/Groups/GetGroups';
 import Details from './pages/details/Details';
+import Navbar from './components/Navbar';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,11 +24,16 @@ function App() {
   return (
     <section className="main_container">
       {isLoggedIn && (
-      <div>
-        <h1>Navbar is going to be here</h1>
-      </div>
+        <>
+          <header>
+            <h1>Reserve Online classes</h1>
+          </header>
+          <div className="navigation_menu">
+            <Navbar />
+          </div>
+        </>
       )}
-      <div>
+      <div className="main_page">
         {session.status && (
           <h6 className="flash_notice">{session.status}</h6>
         )}
@@ -50,6 +56,10 @@ function App() {
           </Routes>
         )}
       </div>
+      <footer>
+        <p> Made with &#10084;&#65039; by Jake, Pascal, Yussuf and Christian</p>
+        <p>Alright reserved &copy; 2022</p>
+      </footer>
     </section>
   );
 }
