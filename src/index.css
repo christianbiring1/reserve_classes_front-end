@@ -9,10 +9,10 @@
 .main_container {
   display: grid;
   width: 100%;
-  grid-template-areas: 
-     "head head"
-     "nav main"
-     "nav foot";
+  grid-template-areas:
+    "head head"
+    "nav main"
+    "nav foot";
   grid-template-rows: 50px 1fr 80px;
   grid-template-columns: 20% 1fr;
   font-family: 'Montserrat', sans-serif;
@@ -25,6 +25,7 @@
 
 .main_container > .navigation_menu {
   grid-area: nav;
+
   /* background-color: #ffc08c; */
 }
 
@@ -90,9 +91,3 @@
 .social_icon.instagram {
   background: url(./assets/icons/instagram.png) no-repeat center center/cover;
 }
-
-
-/* .main_container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-} */
