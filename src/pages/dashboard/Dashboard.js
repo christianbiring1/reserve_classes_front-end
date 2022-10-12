@@ -42,7 +42,7 @@ function DashBoard() {
       <main className={styles.mainSection}>
         { isLoading ? (<img className={styles.ripple} src={ripple} alt="" />) : (
           <>
-            <button onClick={prevPage} type="button">&larr;</button>
+            <button className={styles.nextButton} onClick={prevPage} type="button">&larr;</button>
             <div className={styles.main}>
               <div className={styles.headline}>
                 <h1>Classes</h1>
@@ -61,7 +61,7 @@ function DashBoard() {
                 ))}
               </div>
             </div>
-            <button onClick={nextPage} type="button">&rarr;</button>
+            <button className={styles.prevButton} onClick={nextPage} type="button">&rarr;</button>
           </>
         )}
       </main>

@@ -20,6 +20,16 @@
   transition: all 0.1s ease-in;
 }
 
+.nextButton {
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
+}
+
+.prevButton {
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+}
+
 .mainSection button:hover {
   transform: translateY(-4px);
   box-shadow: 0 5px 10px #888;
