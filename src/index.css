@@ -32,7 +32,7 @@
 .main_container > footer {
   grid-area: foot;
   text-align: center;
-  padding: 10px;
+  padding: 11px;
   background-color: #8cffa0;
 }
 
