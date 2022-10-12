@@ -24,7 +24,6 @@ const ReservationForm = (props) => {
   };
 
   return (
-
     <form onSubmit={handleSubmit}>
       <div className="form__items">
         <div className="form__items__control">

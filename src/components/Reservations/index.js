@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchReservation } from '../../redux/reserveSlice';
-import Navbar from '../Navbar';
 
 const Reservation = () => {
   const dispatch = useDispatch();
@@ -14,9 +13,6 @@ const Reservation = () => {
 
   return (
     <section className="m-5">
-      <div className="nav_panel">
-        <Navbar />
-      </div>
       <h2 className="mb-5">My reservations</h2>
       <table className="table table-bordered">
         <thead>
