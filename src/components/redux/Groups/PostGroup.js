@@ -1,30 +1,75 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addgroup } from './GroupReducer';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import React, { useState, useReducer } from 'react';
+import { putGroup } from '../../../redux/newGroupSlice';
 
+const groupForm = {
+  name: '',
+  title: '',
+  description: '',
+  rating: 0,
+  image: '',
+};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'name':
+      return {
+        ...state,
+        name: action.payload,
+      };
+    case 'title':
+      return {
+        ...state,
+        title: action.payload,
+      };
+    case 'description':
+      return {
+        ...state,
+        description: action.payload,
+      };
+    case 'rating':
+      return {
+        ...state,
+        rating: action.payload,
+      };
+    case 'image':
+      return {
+        ...state,
+        image: action.payload,
+      };
+    default:
+      throw new Error();
+  }
+};
 function PostGroup() {
-  const [title, setTitle] = useState('');
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [rating, setRating] = useState('');
-  const group = {
-    title, name, description, rating,
+  const postToApi = useDispatch();
+  const navigate = useNavigate();
+  const [formState, dispatch] = useReducer(reducer, groupForm);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const isFormValid = (formState) => {
+    if (!formState.image) {
+      setErrorMessage('Please upload an image to the hotel');
+      return false;
+    }
+    return true;
   };
 
-  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addgroup(group));
-    setTitle('');
-    setRating('');
-    setDescription('');
-    setName('');
+    setIsFormSubmitted(true);
+    if (!isFormValid(formState)) return;
+    const formData = new FormData();
+    formData.append('name', formState.name);
+    formData.append('description', formState.description);
+    formData.append('rating', formState.rating);
+    formData.append('image', formState.image);
+    formData.append('title', formState.title);
+
+    postToApi(putGroup(formData));
+    navigate('/dashboard');
   };
-  const groups = useSelector((state) => state.groups);
-  useEffect(() => {
-    dispatch(addgroup(group));
-  }, [dispatch]);
 
   return (
 
@@ -35,32 +80,41 @@ function PostGroup() {
           <input
             type="text"
             name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => dispatch({ type: 'title', payload: e.target.value })}
             placeholder="Title"
           />
 
           <input
             type="text"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => dispatch({ type: 'name', payload: e.target.value })}
             placeholder="Name"
           />
           <input
             type="text"
             name="decription"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e) => dispatch({ type: 'description', payload: e.target.value })}
             placeholder="description"
           />
           <input
-            type="text"
+            type="number"
             name="rating"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
+            onChange={(e) => dispatch({ type: 'rating', payload: e.target.value })}
             placeholder="rating"
           />
+          <input
+            type="file"
+            accept="image/*"
+            multiple={false}
+            name="image"
+            onChange={(e) => dispatch({ type: 'image', payload: e.target.files[0] })}
+          />
+          {isFormSubmitted && (
+          <div>
+            {errorMessage}
+          </div>
+          )}
+
           <div className="submitButton">
             <button type="submit">ADD GROUP</button>
           </div>

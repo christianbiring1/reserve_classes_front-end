@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import GroupList from './GroupList';
-import { getgroups } from './GroupReducer';
+import { fetchGroups } from '../../../redux/groupSlice';
 
 function GetGroups() {
   const dispatch = useDispatch();
 
-  const groups = useSelector((state) => state.groups);
+  const groups = useSelector((state) => state.groups.groupList);
   useEffect(() => {
-    dispatch(getgroups());
+    dispatch(fetchGroups());
   }, []);
 
   return (
@@ -19,13 +19,13 @@ function GetGroups() {
       <h4>GetGroups</h4>
       <ul>
 
-        {groups.length > 0 ? groups[0].map((group) => (
+        {groups.length && groups.length > 0 ? groups.map((group) => (
           <GroupList
             groupprop={group}
             key={group.id}
           />
 
-        )) : 'Please wait...'}
+        )) : 'Please wait...collecting data'}
 
       </ul>
 

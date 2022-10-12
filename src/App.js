@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Splash from './components/Splash';
-import AddGroup from './components/redux/Groups/GroupReducer';
 import DashBoard from './pages/dashboard/Dashboard';
 import PostGroup from './components/redux/Groups/PostGroup';
 import Reservations from './components/Reservations';
@@ -10,6 +9,7 @@ import NewReservation from './components/Reservations/NewReservation';
 import { sessionIsLoggedIn } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
 import Details from './pages/details/Details';
+import GetGroups from './components/Groups/GetGroups';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,10 +28,11 @@ function App() {
       {isLoggedIn && (
         <Routes>
           <Route exact path="/" element={<DashBoard />} />
-          <Route exact path="groups/add" element={<AddGroup />} />
           <Route exact path="/add" element={<PostGroup />} />
           <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path="/newreservation" element={<NewReservation />} />
+          <Route exact path="/groups" element={<GetGroups />} />
+
           <Route exact path="/class/:id" element={<Details />} />
         </Routes>
       )}
