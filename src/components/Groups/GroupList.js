@@ -43,7 +43,7 @@ function GroupList(props) {
           type="button"
         >
           {' '}
-          Edit
+          Edit Class
 
         </button>
       </div>
