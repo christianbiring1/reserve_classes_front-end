@@ -68,7 +68,7 @@ function PostGroup() {
     formData.append('title', formState.title);
 
     postToApi(putGroup(formData));
-    navigate('/dashboard');
+    navigate('/');
   };
 
   return (
