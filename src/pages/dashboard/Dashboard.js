@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './Dashboard.module.css';
 import Class from '../../components/class_card/Class';
 import { fetchClasses } from '../../redux/classes/classes';
+import Navbar from '../../components/Navbar';
 
 function DashBoard() {
   const dispatch = useDispatch();
@@ -15,6 +16,9 @@ function DashBoard() {
   return (
     <>
       <main>
+        <div className="nav_panel">
+          <Navbar />
+        </div>
         <div className={styles.headline}>
           <h1>Classes</h1>
           <h6>Please select a class</h6>

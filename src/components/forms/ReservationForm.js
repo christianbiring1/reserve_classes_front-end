@@ -1,5 +1,6 @@
 /* eslint-disable  */
 import { useState } from 'react';
+import Navbar from '../Navbar';
 
 const ReservationForm = (props) => {
   const [newDate, setNewDate] = useState({
@@ -14,6 +15,10 @@ const ReservationForm = (props) => {
   };
 
   return (
+    <>
+    <div className='nav_panel'>
+      <Navbar />
+    </div>
     <form onSubmit={handleSubmit}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
@@ -35,6 +40,7 @@ const ReservationForm = (props) => {
         <button type="submit">Reserve</button>
       </div>
     </form>
+    </>
   );
 };
 
