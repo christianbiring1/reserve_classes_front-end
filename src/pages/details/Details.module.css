@@ -17,6 +17,11 @@
   margin-top: 5rem;
   display: flex;
   justify-content: center;
+  min-height: 50vh;
+}
+
+.ripple {
+  margin: auto;
 }
 
 .image {
