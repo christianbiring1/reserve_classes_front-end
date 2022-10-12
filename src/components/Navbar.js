@@ -3,22 +3,36 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div>
-      <NavLink to="/">
-        CLASSES
-      </NavLink>
-      <NavLink to="/newreservation">
-        RESERVE CLASS
-      </NavLink>
-      <NavLink to="/reservations">
-        MY RESERVATIONS
-      </NavLink>
-      <NavLink to="/add">
-        ADD CLASS
-      </NavLink>
-      <NavLink to="/">
-        DELETE CLASS
-      </NavLink>
+    <div className="nav_container">
+      <nav>
+        <ul>
+          <li className="nav_item">
+            <NavLink to="/">
+              CLASSES
+            </NavLink>
+          </li>
+          <li className="nav_item">
+            <NavLink to="/newreservation">
+              RESERVE CLASS
+            </NavLink>
+          </li>
+          <li className="nav_item">
+            <NavLink to="/reservations">
+              MY RESERVATIONS
+            </NavLink>
+          </li>
+          <li className="nav_item">
+            <NavLink to="/add">
+              ADD CLASS
+            </NavLink>
+          </li>
+          <li className="nav_item">
+            <NavLink to="/">
+              DELETE CLASS
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
