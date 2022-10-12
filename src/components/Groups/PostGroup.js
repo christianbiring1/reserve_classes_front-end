@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useReducer } from 'react';
 import { putGroup } from '../../redux/newGroupSlice';
-import Navbar from '../Navbar';
 
 const groupForm = {
   name: '',
@@ -75,9 +74,6 @@ function PostGroup() {
   return (
 
     <div>
-      <div className="nav_panel">
-        <Navbar />
-      </div>
       <form onSubmit={handleSubmit}>
         <h1>ADD NEW GROUP</h1>
         <div className="form">

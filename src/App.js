@@ -10,6 +10,7 @@ import { sessionIsLoggedIn } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
 import GetGroups from './components/Groups/GetGroups';
 import Details from './pages/details/Details';
+import Navbar from './components/Navbar';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,11 +22,12 @@ function App() {
   }, [dispatch]);
 
   return (
-    <section className='main_container'>
-      {isLoggedIn && <div>
-        <h1>Navbar is going to be here</h1>
+    <section className="main_container">
+      {isLoggedIn && (
+      <div>
+        <Navbar />
       </div>
-      }
+      )}
       <div>
         {session.status && (
           <h6 className="flash_notice">{session.status}</h6>
