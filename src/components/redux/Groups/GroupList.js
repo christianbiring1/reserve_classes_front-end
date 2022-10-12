@@ -25,7 +25,7 @@ function GroupList(props) {
           type="button"
         >
           {' '}
-          Remove
+          Removeds
 
         </button>
       </div>
