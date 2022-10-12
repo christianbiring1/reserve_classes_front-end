@@ -4,6 +4,38 @@
   box-sizing: border-box;
 }
 
+.main_container {
+  display: grid;
+  width: 100%;
+  grid-template-areas: 
+     "head head"
+     "nav main"
+     "nav foot";
+  grid-template-rows: 50px 1fr 30px;
+  grid-template-columns: 30% 1fr;
+  border: 1px solid red;
+}
+
+.main_container > header {
+  grid-area: head;
+  background-color: #8ca0ff;
+}
+
+.main_container > .navigation_menu {
+  grid-area: nav;
+  background-color: #ffc08c;
+}
+
+.main_container > .main_page {
+  grid-area: main;
+  background-color: #ffff64;
+}
+
+.main_container > footer {
+  grid-area: foot;
+  background-color: #8cffa0;
+}
+
 .group_item {
   background-color: rebeccapurple;
   margin-bottom: 30px;
@@ -39,7 +71,7 @@
 }
 
 
-.main_container {
+/* .main_container {
   display: grid;
   grid-template-columns: 1fr 3fr;
-}
+} */
