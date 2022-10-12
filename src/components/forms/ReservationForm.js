@@ -57,4 +57,3 @@ const ReservationForm = (props) => {
 };
 
 export default ReservationForm;
-
