@@ -24,9 +24,14 @@ function App() {
   return (
     <section className="main_container">
       {isLoggedIn && (
-      <div className="navigation_menu">
-        <Navbar />
-      </div>
+        <>
+          <header>
+            <h1>Reserve Online classes</h1>
+          </header>
+          <div className="navigation_menu">
+            <Navbar />
+          </div>
+        </>
       )}
       <div className="main_page">
         {session.status && (
@@ -51,6 +56,7 @@ function App() {
           </Routes>
         )}
       </div>
+      <footer>Made with love by Jake, Pascal, Yussuf and Christian</footer>
     </section>
   );
 }
