@@ -14,26 +14,26 @@ import Navbar from './components/Navbar';
 
 function App() {
   const dispatch = useDispatch();
-  const session = useSelector((state) => state.session);
+  const session = useSelector((state) => state.persistedSession.session);
   const isLoggedIn = session.logged_in;
 
   useEffect(() => {
     dispatch(sessionIsLoggedIn());
-  }, [dispatch]);
+  }, []);
 
   return (
     <section className="main_container">
+      <header>
+        <h1>Reserve Online classes</h1>
+      </header>
       {isLoggedIn && (
-        <>
-          <header>
-            <h1>Reserve Online classes</h1>
-          </header>
+        <div>
           <div className="navigation_menu">
             <Navbar />
           </div>
-        </>
+        </div>
       )}
-      <div className="main_page">
+      <div>
         {session.status && (
           <h6 className="flash_notice">{session.status}</h6>
         )}
@@ -44,7 +44,6 @@ function App() {
             <Route exact path="/reservations" element={<Reservation />} />
             <Route exact path="/newreservation" element={<NewReservation />} />
             <Route exact path="/groups" element={<GetGroups />} />
-
             <Route exact path="/class/:id" element={<Details />} />
           </Routes>
         )}

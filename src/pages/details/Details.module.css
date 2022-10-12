@@ -17,6 +17,11 @@
   margin-top: 5rem;
   display: flex;
   justify-content: center;
+  min-height: 50vh;
+}
+
+.ripple {
+  margin: auto;
 }
 
 .image {
@@ -93,7 +98,18 @@
   background-color: var(--secondary);
 }
 
-.main button {
+.btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserve_btn {
+  margin-top: .5rem;
+  text-decoration: none;
+}
+
+.main button,
+.reserve_btn {
   border: none;
   align-self: flex-end;
   padding: 0.7rem 2rem;

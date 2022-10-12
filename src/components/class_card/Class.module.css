@@ -10,6 +10,11 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  transition: all 0.1s ease-in;
+}
+
+.class:hover {
+  transform: scale(1.05);
 }
 
 .class img {
