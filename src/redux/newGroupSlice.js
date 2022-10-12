@@ -10,17 +10,17 @@ const initialState = {
  export const base='http://localhost:3001'
 
 
-export const postGrp = async (hotel) => axios({
+export const postGrp = async (group) => axios({
   method: 'post',
   url: `${base}/groups`,
   headers: {
     Authorization: `Bearer ${localStorage.getItem('token')}`,
   },
-  data: hotel,
+  data: group,
 });
-export const deleteGrp = async (hotel) => axios({
+export const deleteGrp = async (group) => axios({
   method: 'delete',
-  url: `${base}/groups/${hotel}`,
+  url: `${base}/groups/${group}`,
   headers: {
     Authorization: `Bearer ${localStorage.getItem('token')}`,
   },

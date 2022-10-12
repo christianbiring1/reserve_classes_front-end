@@ -14,6 +14,7 @@ const ReservationForm = (props) => {
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
@@ -35,6 +36,7 @@ const ReservationForm = (props) => {
         <button type="submit">Reserve</button>
       </div>
     </form>
+    </>
   );
 };
 

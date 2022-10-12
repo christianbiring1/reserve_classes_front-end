@@ -1,14 +1,22 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import styles from './Details.module.css';
 import { fetchDetails } from '../../redux/classes/classes';
 import { loading, loaded } from '../../redux/loading/loading';
 import ripple from '../../assets/loading_ripple.svg';
+import { URL } from '../../redux/api/api_helper';
+import { delGroup } from '../../redux/newGroupSlice';
 
 export default function Details() {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const { id } = useParams();
+  const handleDelete = async (group) => {
+    dispatch(delGroup(group));
+    navigate('/');
+  };
 
   useEffect(() => {
     dispatch(loading());
@@ -25,7 +33,8 @@ export default function Details() {
       {(classDetails.id && !isLoading) && (
         <>
           <div className={styles.image}>
-            <img src={classDetails.image} alt="" />
+            <img src={`${URL}${classDetails?.image?.url}`} alt="" />
+
             <Link to="/" className={styles.backButton}>
               <span />
             </Link>
@@ -41,6 +50,16 @@ export default function Details() {
                 <span>{classDetails.rating}</span>
               </li>
             </ul>
+            <div>
+              <button
+                type="button"
+                onClick={() => handleDelete(classDetails.id)}
+              >
+                {' '}
+                Remove
+
+              </button>
+            </div>
             <button type="button">Reserve</button>
           </div>
         </>

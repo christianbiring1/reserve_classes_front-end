@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchReservation } from '../../redux/reserveSlice';
 
-const Reservaion = () => {
+const Reservation = () => {
   const dispatch = useDispatch();
   const reserved = useSelector((state) => state.reserve.reservations);
 
@@ -41,4 +41,4 @@ const Reservaion = () => {
   );
 };
 
-export default Reservaion;
+export default Reservation;
