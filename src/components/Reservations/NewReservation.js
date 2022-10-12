@@ -12,7 +12,10 @@ const NewReservation = () => {
   };
   return (
     <div>
-      <ReservationForm handleForm={handleForm} />
+      <div></div>
+      <div>
+        <ReservationForm handleForm={handleForm} />
+      </div>
     </div>
   );
 };

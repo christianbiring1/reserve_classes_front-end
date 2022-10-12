@@ -16,6 +16,7 @@ export default function Details() {
   }, []);
 
   const classDetails = useSelector((state) => state.class.details);
+  console.log(classDetails)
 
   return (
     <section className={styles.main}>
@@ -42,7 +43,8 @@ export default function Details() {
                 <span>{classDetails.rating}</span>
               </li>
             </ul>
-            <button type="button">Reserve</button>
+            {/* <button type="button" >Reserve</button> */}
+            <Link to='/newreservation' state={{ id: classDetails.id }}>Reserve</Link>
           </div>
         </>
       )}
