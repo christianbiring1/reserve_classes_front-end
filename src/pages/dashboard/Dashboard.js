@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Dashboard.module.css';
 import Class from '../../components/class_card/Class';
@@ -10,6 +10,7 @@ function DashBoard() {
   const dispatch = useDispatch();
   const classes = useSelector((state) => state.class.classes);
   const isLoading = useSelector((state) => state.loading);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     dispatch(loading());
@@ -17,6 +18,24 @@ function DashBoard() {
       dispatch(loaded());
     });
   }, []);
+
+  const currentClasses = classes.slice(3 * count, 3 * count + 3);
+
+  const nextPage = () => {
+    if (currentClasses.length < 3) {
+      setCount(0);
+    } else {
+      setCount(count + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (count <= 0) {
+      setCount(0);
+    } else {
+      setCount(count - 1);
+    }
+  };
 
   return (
     <>
@@ -29,7 +48,7 @@ function DashBoard() {
               <span className={styles.seperator} />
             </div>
             <div className={styles.classList}>
-              {classes.map((group) => (
+              {currentClasses.map((group) => (
                 <Class
                   key={group.id}
                   id={group.id}
@@ -39,6 +58,8 @@ function DashBoard() {
                 />
               ))}
             </div>
+            <button onClick={nextPage} type="button">Next</button>
+            <button onClick={prevPage} type="button">Prev</button>
           </>
         )}
       </main>
