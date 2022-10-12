@@ -56,7 +56,10 @@ function App() {
           </Routes>
         )}
       </div>
-      <footer>Made with love by Jake, Pascal, Yussuf and Christian</footer>
+      <footer>
+        <p> Made with &#10084;&#65039; by Jake, Pascal, Yussuf and Christian</p>
+        <p>Alright reserved &copy; 2022</p>
+      </footer>
     </section>
   );
 }

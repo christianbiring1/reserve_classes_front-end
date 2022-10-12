@@ -13,8 +13,8 @@
      "head head"
      "nav main"
      "nav foot";
-  grid-template-rows: 50px 1fr 30px;
-  grid-template-columns: 30% 1fr;
+  grid-template-rows: 50px 1fr 80px;
+  grid-template-columns: 20% 1fr;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -35,6 +35,8 @@
 
 .main_container > footer {
   grid-area: foot;
+  text-align: center;
+  padding: 10px;
   background-color: #8cffa0;
 }
 
