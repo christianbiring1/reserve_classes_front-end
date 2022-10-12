@@ -1,0 +1,47 @@
+.reservations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.reservation__container {
+    display: grid;
+    grid-template-columns: 1fr 60%;
+    grid-auto-flow: column;
+
+}
+
+.grid__item img {
+    width: 100%;
+}
+
+form {
+    padding: 0 15% 0 2%;
+}
+
+form input {
+    padding: .5rem;
+}
+
+.form__items__control label {
+    padding: .5rem 0;
+}
+
+form input,
+.select {
+    border: 2px solid black;
+    width: 100%;
+}
+
+.rserve__btn {
+    border: none;
+    margin: 1rem 0;
+    ;
+    width: 100%;
+    align-self: flex-end;
+    padding: 0.7rem 2rem;
+    color: #fff;
+    font-weight: 600;
+    background-color: #97bf11;
+}

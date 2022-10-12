@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Select from 'react-select';
-import "./reservation.css";
 
 const ReservationForm = (props) => {
   const options = [
@@ -25,37 +24,36 @@ const ReservationForm = (props) => {
   };
 
   return (
-    <section className="reservation__container">
-      <form onSubmit={handleSubmit}>
-        <div className="new-expense__controls">
-          <div className="new-expense__control">
-            <Select options={options}
-              onChange={(e) => setNewDate({
-                ...newDate,
-                city: e.value,
-              })}
-            />
-          </div>
-          <div className="new-expense__control">
-            <label htmlFor="date">Date</label>
-            <input
-              type="date"
-              id="date"
-              value={newDate.date}
-              min="2020-01-01"
-              max="2023-01-01"
-              onChange={(e) => setNewDate({
-                ...newDate,
-                date: e.target.value,
-              })}
-            />
-          </div>
+
+    <form onSubmit={handleSubmit}>
+      <div className="form__items">
+        <div className="form__items__control">
+          <Select options={options}
+            className="select"
+            placeholder="Select City ..."
+            onChange={(e) => setNewDate({
+              ...newDate,
+              city: e.value,
+            })}
+          />
         </div>
-        <div className="new-expense-actions">
-          <button type="submit">Reserve</button>
+        <div className="form__items__control">
+          <label htmlFor="date">Date</label>
+          <input
+            type="date"
+            id="date"
+            value={newDate.date}
+            min="2020-01-01"
+            max="2023-01-01"
+            onChange={(e) => setNewDate({
+              ...newDate,
+              date: e.target.value,
+            })}
+          />
         </div>
-      </form>
-    </section>
+      </div>
+      <button type="submit" className='rserve__btn'>Submit</button>
+    </form>
   );
 };
 

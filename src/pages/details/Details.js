@@ -44,7 +44,7 @@ export default function Details() {
               </li>
             </ul>
             {/* <button type="button" >Reserve</button> */}
-            <Link to='/newreservation' state={{ id: classDetails.id }}>Reserve</Link>
+            <Link to='/newreservation' className="reserve__btn" state={{ group_id: classDetails.id }}>Reserve</Link>
           </div>
         </>
       )}
