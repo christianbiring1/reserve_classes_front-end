@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { base } from '../../../redux/newGroupSlice';
 
 function GroupList(props) {
   const { groupprop } = props;
   const {
-    title, name, description, rating,
+    title, name, description, rating, image,
   } = groupprop;
   return (
     <li className="group_item">
@@ -13,6 +13,13 @@ function GroupList(props) {
       <p>{title}</p>
       <p>{description}</p>
       <p>{rating}</p>
+      <p>
+        {' '}
+
+        <img src={`${base}${image.url}`} alt="group" />
+
+      </p>
+
       <div>
         <button
           type="button"
@@ -38,5 +45,15 @@ function GroupList(props) {
 }
 
 GroupList.propTypes = {};
+GroupList.propTypes = {
+  groupprop: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    description: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    image: PropTypes.string,
+
+  }).isRequired,
+};
 
 export default GroupList;

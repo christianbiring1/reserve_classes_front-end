@@ -1,8 +1,10 @@
+/* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import styles from './Details.module.css';
 import { fetchDetails } from '../../redux/classes/classes';
+import { URL } from '../../redux/api/api_helper';
 
 export default function Details() {
   const dispatch = useDispatch();
@@ -19,7 +21,8 @@ export default function Details() {
       {classDetails.id && (
         <>
           <div className={styles.image}>
-            <img src={classDetails.image} alt="" />
+            <img src={`${URL}${classDetails?.image?.url}`} alt="" />
+
             <Link to="/" className={styles.backButton}>
               <span />
             </Link>
