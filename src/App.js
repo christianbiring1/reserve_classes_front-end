@@ -21,11 +21,12 @@ function App() {
   }, [dispatch]);
 
   return (
-    <section className='main_container'>
-      {isLoggedIn && <div>
+    <section className="main_container">
+      {isLoggedIn && (
+      <div>
         <h1>Navbar is going to be here</h1>
       </div>
-      }
+      )}
       <div>
         {session.status && (
           <h6 className="flash_notice">{session.status}</h6>
@@ -37,7 +38,6 @@ function App() {
             <Route exact path="/reservations" element={<Reservation />} />
             <Route exact path="/newreservation" element={<NewReservation />} />
             <Route exact path="/groups" element={<GetGroups />} />
-
             <Route exact path="/class/:id" element={<Details />} />
           </Routes>
         )}
