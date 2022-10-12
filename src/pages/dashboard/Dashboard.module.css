@@ -1,3 +1,13 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.ripple {
+  margin: auto;
+}
+
 .headline {
   margin: 10rem 0 5rem 0;
   display: flex;

@@ -1,5 +1,5 @@
-const loading = (payload) => ({ type: 'LOADING', payload });
-const loaded = (payload) => ({ type: 'LOADED', payload });
+const loading = () => ({ type: 'LOADING' });
+const loaded = () => ({ type: 'LOADED' });
 
 const initialState = false;
 
