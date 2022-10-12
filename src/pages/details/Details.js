@@ -49,7 +49,7 @@ export default function Details() {
                 <span>{classDetails.rating}</span>
               </li>
             </ul>
-            <div>
+            <div className={styles.btns}>
               <button
                 type="button"
                 onClick={() => handleDelete(classDetails.id)}
@@ -58,8 +58,8 @@ export default function Details() {
                 Remove
 
               </button>
+              <Link to="/newreservation" className={styles.reserve_btn} state={{ group_id: classDetails.id }}>Reserve</Link>
             </div>
-            <button type="button">Reserve</button>
           </div>
         </>
       )}

@@ -1,11 +1,25 @@
-/* eslint-disable  */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/prop-types */
+/* eslint-disable camelcase */
+/* eslint-disable react/destructuring-assignment */
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import Select from 'react-select';
 
 const ReservationForm = (props) => {
+  const options = [
+    { value: 'Kigali', label: 'Kigali' },
+    { value: 'Kinshasa', label: 'Kinshasa' },
+    { value: 'Paris', label: 'Paris' },
+  ];
+  const location = useLocation();
+  const { group_id } = location.state;
+
   const [newDate, setNewDate] = useState({
     date: '',
+    city: '',
     user_id: 1,
-    group_id: 1,
+    group_id,
   });
 
   const handleSubmit = (e) => {
@@ -14,10 +28,20 @@ const ReservationForm = (props) => {
   };
 
   return (
-    <>
     <form onSubmit={handleSubmit}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
+      <div className="form__items">
+        <div className="form__items__control">
+          <Select
+            options={options}
+            className="select"
+            placeholder="Select City ..."
+            onChange={(e) => setNewDate({
+              ...newDate,
+              city: e.value,
+            })}
+          />
+        </div>
+        <div className="form__items__control">
           <label htmlFor="date">Date</label>
           <input
             type="date"
@@ -32,11 +56,8 @@ const ReservationForm = (props) => {
           />
         </div>
       </div>
-      <div className="new-expense-actions">
-        <button type="submit">Reserve</button>
-      </div>
+      <button type="submit" className="rserve__btn">Submit</button>
     </form>
-    </>
   );
 };
 
