@@ -1,3 +1,49 @@
+:root {
+  --primary: #97bf11;
+  --secondary: #e2e3e5;
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 80vh;
+}
+
+.mainSection button {
+  align-self: flex-end;
+  padding: 5px 1rem;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  font-size: 25px;
+  transition: all 0.1s ease-in;
+}
+
+.nextButton {
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
+}
+
+.prevButton {
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+}
+
+.mainSection button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 10px #888;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.ripple {
+  margin: auto;
+}
+
 .headline {
   margin: 10rem 0 5rem 0;
   display: flex;

@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/prop-types */
+/* eslint-disable camelcase */
+/* eslint-disable react/destructuring-assignment */
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Select from 'react-select';
@@ -6,16 +10,16 @@ const ReservationForm = (props) => {
   const options = [
     { value: 'Kigali', label: 'Kigali' },
     { value: 'Kinshasa', label: 'Kinshasa' },
-    { value: 'Paris', label: 'Paris' }
-  ]
+    { value: 'Paris', label: 'Paris' },
+  ];
   const location = useLocation();
-  const { group_id } = location.state
+  const { group_id } = location.state;
 
   const [newDate, setNewDate] = useState({
     date: '',
     city: '',
     user_id: 1,
-    group_id: group_id,
+    group_id,
   });
 
   const handleSubmit = (e) => {
@@ -27,7 +31,8 @@ const ReservationForm = (props) => {
     <form onSubmit={handleSubmit}>
       <div className="form__items">
         <div className="form__items__control">
-          <Select options={options}
+          <Select
+            options={options}
             className="select"
             placeholder="Select City ..."
             onChange={(e) => setNewDate({
@@ -51,7 +56,7 @@ const ReservationForm = (props) => {
           />
         </div>
       </div>
-      <button type="submit" className='rserve__btn'>Submit</button>
+      <button type="submit" className="rserve__btn">Submit</button>
     </form>
   );
 };

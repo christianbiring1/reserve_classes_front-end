@@ -29,11 +29,6 @@
   /* background-color: #ffc08c; */
 }
 
-.main_container > .main_page {
-  grid-area: main;
-  background-color: #ffff64;
-}
-
 .main_container > footer {
   grid-area: foot;
   text-align: center;
