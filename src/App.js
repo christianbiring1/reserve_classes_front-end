@@ -24,11 +24,11 @@ function App() {
   return (
     <section className="main_container">
       {isLoggedIn && (
-      <div>
+      <div className="navigation_menu">
         <Navbar />
       </div>
       )}
-      <div>
+      <div className="main_page">
         {session.status && (
           <h6 className="flash_notice">{session.status}</h6>
         )}
