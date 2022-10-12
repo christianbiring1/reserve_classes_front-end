@@ -23,11 +23,11 @@ function App() {
 
   return (
     <section className="main_container">
+      <header>
+        <h1>Reserve Online classes</h1>
+      </header>
       {isLoggedIn && (
         <div>
-          <header>
-            <h1>Reserve Online classes</h1>
-          </header>
           <div className="navigation_menu">
             <Navbar />
           </div>
