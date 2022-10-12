@@ -13,7 +13,7 @@ import Details from './pages/details/Details';
 
 function App() {
   const dispatch = useDispatch();
-  const session = useSelector((state) => state.session);
+  const session = useSelector((state) => state.persistedSession.session);
   const isLoggedIn = session.logged_in;
 
   useEffect(() => {

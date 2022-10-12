@@ -5,7 +5,7 @@ const signUp = (payload) => ({ type: 'SIGNUP', payload });
 const checkLogin = (payload) => ({ type: 'CHECK_LOGIN', payload });
 
 const initialState = {
-  loggedIn: false,
+  logged_in: false,
   user: {},
   error: '',
 };
