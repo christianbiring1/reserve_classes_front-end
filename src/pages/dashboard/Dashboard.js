@@ -39,27 +39,29 @@ function DashBoard() {
 
   return (
     <>
-      <main className={styles.main}>
+      <main className={styles.mainSection}>
         { isLoading ? (<img className={styles.ripple} src={ripple} alt="" />) : (
           <>
-            <div className={styles.headline}>
-              <h1>Classes</h1>
-              <h6>Please select a class</h6>
-              <span className={styles.seperator} />
+            <button onClick={prevPage} type="button">&larr;</button>
+            <div className={styles.main}>
+              <div className={styles.headline}>
+                <h1>Classes</h1>
+                <h6>Please select a class</h6>
+                <span className={styles.seperator} />
+              </div>
+              <div className={styles.classList}>
+                {currentClasses.map((group) => (
+                  <Class
+                    key={group.id}
+                    id={group.id}
+                    title={group.title}
+                    image={group.image}
+                    description={group.description}
+                  />
+                ))}
+              </div>
             </div>
-            <div className={styles.classList}>
-              {currentClasses.map((group) => (
-                <Class
-                  key={group.id}
-                  id={group.id}
-                  title={group.title}
-                  image={group.image}
-                  description={group.description}
-                />
-              ))}
-            </div>
-            <button onClick={nextPage} type="button">Next</button>
-            <button onClick={prevPage} type="button">Prev</button>
+            <button onClick={nextPage} type="button">&rarr;</button>
           </>
         )}
       </main>
