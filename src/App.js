@@ -24,6 +24,7 @@ function App() {
   return (
     <section className="main_container">
       {isLoggedIn && (
+
         <>
           <header>
             <h1>Reserve Online classes</h1>
@@ -44,7 +45,6 @@ function App() {
             <Route exact path="/reservations" element={<Reservation />} />
             <Route exact path="/newreservation" element={<NewReservation />} />
             <Route exact path="/groups" element={<GetGroups />} />
-
             <Route exact path="/class/:id" element={<Details />} />
           </Routes>
         )}

@@ -1,14 +1,21 @@
 /* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import styles from './Details.module.css';
 import { fetchDetails } from '../../redux/classes/classes';
 import { URL } from '../../redux/api/api_helper';
+import { delGroup } from '../../redux/newGroupSlice';
 
 export default function Details() {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const { id } = useParams();
+  const handleDelete = async (group) => {
+    dispatch(delGroup(group));
+    navigate('/');
+  };
 
   useEffect(() => {
     dispatch(fetchDetails(id));
@@ -38,6 +45,16 @@ export default function Details() {
                 <span>{classDetails.rating}</span>
               </li>
             </ul>
+            <div>
+              <button
+                type="button"
+                onClick={() => handleDelete(classDetails.id)}
+              >
+                {' '}
+                Remove
+
+              </button>
+            </div>
             <button type="button">Reserve</button>
           </div>
         </>
