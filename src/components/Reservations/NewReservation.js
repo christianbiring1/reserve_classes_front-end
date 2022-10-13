@@ -11,15 +11,16 @@ import imgsvg from './undrow.svg';
 const NewReservation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const handleForm = (formData) => {
     const {
-      date, group_id, city,
+      date, group_id, city, user_id,
     } = formData;
     dispatch(newreservation({
-      date, group_id, city,
+      date, group_id, city, user_id,
     }));
     navigate('/reservations');
-    toast('Class reserved successfull', {
+    toast('Class reserved successfully!', {
       position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,
@@ -30,6 +31,7 @@ const NewReservation = () => {
       theme: 'light',
     });
   };
+
   return (
     <section className="reservations">
       <div className="reservation__container">

@@ -3,6 +3,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable react/destructuring-assignment */
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import Select from 'react-select';
 
@@ -14,11 +15,13 @@ const ReservationForm = (props) => {
   ];
   const location = useLocation();
   const { group_id } = location.state;
+  const user_id = useSelector((state) => state.persistedSession.session.user.id);
 
   const [newDate, setNewDate] = useState({
     date: '',
     city: '',
     group_id,
+    user_id,
   });
 
   const handleSubmit = (e) => {

@@ -12,9 +12,9 @@ const initialState = {
 export const newreservation = createAsyncThunk(
   'new/reservation',
   async ({
-    date, group_id, city,
+    date, group_id, city, user_id,
   }) => await axios.post('http://127.0.0.1:3001/reservations', {
-    date, group_id, city,
+    date, group_id, city, user_id,
   }),
 );
 
