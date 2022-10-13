@@ -26,7 +26,7 @@ const store = configureStore({
     class: updateClasses,
     loading: updateIsLoading,
     persistedSession,
-    reservation: updateReservations
+    reservation: updateReservations,
   },
   middleware: customizedMiddleware,
 });

@@ -18,7 +18,6 @@ const ReservationForm = (props) => {
   const [newDate, setNewDate] = useState({
     date: '',
     city: '',
-    user_id: 1,
     group_id,
   });
 
