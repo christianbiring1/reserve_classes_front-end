@@ -36,27 +36,27 @@ Not yet available
 
 👤 **Christian biringanine**
 
-- GitHub: [@christianbiring1](https://github.com/christianbiring1)
-- Twitter: [@christianbirin4](https://twitter.com/christianbirin4)
+- GitHub: [christianbiring1](https://github.com/christianbiring1)
+- Twitter: [christianbirin4](https://twitter.com/christianbirin4)
 - LinkedIn: [Christian Biringanine](https://linkedin.com/in/christian-biringanine/)
 
 👤 **Jake Felice**
 
-- GitHub: [@SimbaWANGU](https://github.com/)
-- Twitter: [@Simb_erella](https://twitter.com/)
-- LinkedIn: [Simba Wangulu](https://linkedin.com/in//)
+- GitHub: [](https://github.com/)
+- Twitter: [](https://twitter.com/)
+- LinkedIn: [](https://linkedin.com/in//)
 
 👤 **Bazimungu Pascal**
 
-- Github: [@Bria22](https://github.com/)
-- Linkedin: [@briannyachae](https://www.linkedin.com/in//)
-- Twitter: [@briannyachae9](https://twitter.com/)
+- Github: [](https://github.com/)
+- Linkedin: [](https://www.linkedin.com/in//)
+- Twitter: [](https://twitter.com/)
 
 👤 **Yussuf Nviiri**
 
-- Github: [@Bria22](https://github.com/)
-- Linkedin: [@briannyachae](https://www.linkedin.com/in//)
-- Twitter: [@briannyachae9](https://twitter.com/)
+- Github: [](https://github.com/)
+- Linkedin: [](https://www.linkedin.com/in//)
+- Twitter: [](https://twitter.com/)
 
 ## 🤝 Contributing
 
