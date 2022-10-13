@@ -28,11 +28,12 @@ export const cancelReservation = (id) => async (dispatch) => {
 };
 
 const updateReservations = (state = initialState, action) => {
+  const pay = action.payload;
   switch (action.type) {
     case 'GET_RESERVATIONS':
       return { ...state, reservations: action.payload };
     case 'DELETE_RESERVATION':
-      return { reservations: state.reservations.data.filter((r) => r.id !== action.payload) };
+      return { reservations: { data: state.reservations.data.filter((r) => r.id !== pay) } };
     default:
       return state;
   }
