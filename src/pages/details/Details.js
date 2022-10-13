@@ -38,6 +38,10 @@ export default function Details() {
             </div>
             <ul className={styles.infoList}>
               <li>
+                <span>Name: </span>
+                <span>{classDetails.name}</span>
+              </li>
+              <li>
                 <span>Rating: </span>
                 <span>{classDetails.rating}</span>
               </li>
