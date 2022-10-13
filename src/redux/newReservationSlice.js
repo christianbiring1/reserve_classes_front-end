@@ -2,6 +2,7 @@
 /* eslint-disable camelcase */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { URL } from './api/api_helper';
 
 const initialState = {
   date: '',
@@ -13,8 +14,15 @@ export const newreservation = createAsyncThunk(
   'new/reservation',
   async ({
     date, group_id, city, user_id,
-  }) => await axios.post('http://127.0.0.1:3001/reservations', {
-    date, group_id, city, user_id,
+  }) => await axios({
+    method: 'post',
+    url: `${URL}/reservations`,
+    data: {
+      date, group_id, city, user_id,
+    },
+    headers: {
+      Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
+    },
   }),
 );
 
