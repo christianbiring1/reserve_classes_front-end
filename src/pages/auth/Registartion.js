@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { sessionSignUp } from '../../redux/authentication/authentication';
+import styles from './Registration.module.css';
 
 function Registration() {
   const nameRef = useRef(null);
@@ -19,7 +20,7 @@ function Registration() {
   };
 
   return (
-    <div>
+    <div className={styles.main}>
       <h1>Sign Up</h1>
       <form onSubmit={hanldeSubmit}>
         <input
