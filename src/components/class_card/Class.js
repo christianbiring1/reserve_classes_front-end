@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import styles from './Class.module.css';
 
 export default function Class(props) {
+  const URL = 'http://localhost:3001';
+
   const {
     id, title, image, description,
   } = props;
   return (
     <div className={styles.class}>
       <Link to={`/class/${id}`}>
-        <img src={image} alt="group" />
+        <img src={`${URL}${image.url}`} alt="group" />
       </Link>
       <div className={styles.classInfo}>
         <h5>

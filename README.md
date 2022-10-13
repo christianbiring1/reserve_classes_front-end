@@ -54,9 +54,9 @@ Not yet available
 
 👤 **Yussuf Nviiri**
 
-- Github: [](https://github.com/)
-- Linkedin: [](https://www.linkedin.com/in//)
-- Twitter: [](https://twitter.com/)
+- GitHub: [@yusufnviiri](https://github.com/yusufnviiri)
+- Twitter: [@YNviiri](https://twitter.com/YNviiri)
+- LinkedIn: [yusufnviiri]( https://www.linkedin.com/in/yusuf-nviiri-8b4146206/)
 
 ## 🤝 Contributing
 
