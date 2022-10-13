@@ -2,12 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchReservations } from '../../redux/reservations/reservations';
+import { fetchClasses } from '../../redux/classes/classes';
 
 const Reservation = () => {
   const dispatch = useDispatch();
   const reserved = useSelector((state) => state.reservation.reservations);
-
+  const classes = useSelector((state) => state.class.classes);
   useEffect(() => {
+    dispatch(fetchClasses());
     dispatch(fetchReservations());
   }, []);
 
@@ -18,6 +20,7 @@ const Reservation = () => {
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Class</th>
             <th scope="col">End date Date</th>
             <th scope="col">City</th>
             <th scope="col">Actions</th>
@@ -29,6 +32,12 @@ const Reservation = () => {
             ? reserved.data.map((item, index) => (
               <tr key={item.id}>
                 <th scope="row">{index}</th>
+                <td>
+                  <Link className="reserved_class" to={`/class/${item.group_id}`}>
+                    {classes.filter((each) => each.id === item.group_id)[0].title}
+                  </Link>
+
+                </td>
                 <td>{item.date}</td>
                 <td>{item.city}</td>
                 <td><Link to="delete" className="link-danger">Delete</Link></td>
