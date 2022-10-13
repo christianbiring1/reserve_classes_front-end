@@ -13,11 +13,6 @@ function Navbar() {
       <nav className="nav_menu">
         <ul className="nav_list">
           <li className="nav_item">
-            <NavLink to="/newreservation">
-              RESERVE CLASS
-            </NavLink>
-          </li>
-          <li className="nav_item">
             <NavLink to="/reservations">
               MY RESERVATIONS
             </NavLink>

@@ -55,7 +55,7 @@ function DashBoard() {
                     key={group.id}
                     id={group.id}
                     title={group.title}
-                    image={group.image}
+                    image={group.image.url}
                     description={group.description}
                   />
                 ))}

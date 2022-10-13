@@ -34,7 +34,11 @@ const Reservation = () => {
                 <td><Link to="delete" className="link-danger">Delete</Link></td>
               </tr>
             ))
-            : <li><h2>There list of reservation is empty</h2></li>}
+            : (
+              <tr>
+                <td>No Reservations</td>
+              </tr>
+            )}
         </tbody>
       </table>
     </section>
