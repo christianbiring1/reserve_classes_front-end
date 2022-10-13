@@ -7,8 +7,8 @@ const initialState = {
 
 export const fetchReservation = createAsyncThunk('reservation/fetchReservation', () => axios.get('http://127.0.0.1:3001/reservations').then((response) => response.data));
 
-const reservationSlice = createSlice({
-  name: 'reservedClass',
+const reserveSlice = createSlice({
+  name: 'reserv',
   initialState,
   extraReducers: (builder) => {
     builder.addCase(fetchReservation.fulfilled, (state, action) => {
@@ -18,4 +18,4 @@ const reservationSlice = createSlice({
   },
 });
 
-export default reservationSlice.reducer;
+export default reserveSlice.reducer;
