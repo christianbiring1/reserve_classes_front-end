@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const initialState = {
   date: '',
-  user_id: 0,
   group_id: 0,
   city: '',
 };
@@ -13,9 +12,9 @@ const initialState = {
 export const newreservation = createAsyncThunk(
   'new/reservation',
   async ({
-    date, user_id, group_id, city
+    date, group_id, city,
   }) => await axios.post('http://127.0.0.1:3001/reservations', {
-    date, user_id, group_id, city
+    date, group_id, city,
   }),
 );
 
@@ -26,7 +25,6 @@ export const newReservationSlice = createSlice({
     [newreservation.fulfilled]: (state, action) => ({
       ...state,
       date: action.payload.date,
-      user_id: action.payload.user_id,
       group_id: action.payload.group_id,
       city: action.payload.city,
 

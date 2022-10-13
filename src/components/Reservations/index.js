@@ -6,7 +6,6 @@ import { fetchReservations } from '../../redux/reservations/reservations';
 const Reservation = () => {
   const dispatch = useDispatch();
   const reserved = useSelector((state) => state.reservation.reservations);
-  console.log(reserved)
 
   useEffect(() => {
     dispatch(fetchReservations());
