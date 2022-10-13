@@ -3,6 +3,7 @@ import * as apiHelper from '../api/api_helper';
 const login = (payload) => ({ type: 'LOGIN', payload });
 const signUp = (payload) => ({ type: 'SIGNUP', payload });
 const checkLogin = (payload) => ({ type: 'CHECK_LOGIN', payload });
+export const logout = (payload) => ({ type: 'LOG_OUT', payload });
 
 const initialState = {
   logged_in: false,
@@ -51,6 +52,12 @@ const updateSession = (state = initialState, action) => {
       return action.payload;
     case 'CHECK_LOGIN':
       return { ...state, ...action.payload };
+    case 'LOG_OUT':
+      return {
+        logged_in: false,
+        user: {},
+        token: null,
+      };
     default:
       return state;
   }

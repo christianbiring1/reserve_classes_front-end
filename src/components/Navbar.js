@@ -1,7 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../redux/authentication/authentication';
 
 function Navbar() {
+  const dispatch = useDispatch();
   return (
     <div className="navigation_menu">
       <NavLink className="logo" to="/">
@@ -25,9 +28,14 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="nav_item">
-            <NavLink to="/">
-              DELETE CLASS
-            </NavLink>
+            <button
+              onClick={() => {
+                dispatch(logout());
+              }}
+              type="button"
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </nav>

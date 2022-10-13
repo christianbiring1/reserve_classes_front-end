@@ -31,11 +31,6 @@ export const checkLogin = async () => axios({
   },
 });
 
-export const logout = async () => axios({
-  method: 'delete',
-  url: `${URL}/sessions`,
-});
-
 export const getClasses = async () => axios({
   method: 'get',
   url: `${URL}/groups`,
