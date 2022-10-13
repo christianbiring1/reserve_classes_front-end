@@ -7,7 +7,7 @@ const checkLogin = (payload) => ({ type: 'CHECK_LOGIN', payload });
 const initialState = {
   logged_in: false,
   user: {},
-  error: '',
+  token: null,
 };
 
 export const sessionLogin = (payload) => async (dispatch) => {
@@ -50,7 +50,7 @@ const updateSession = (state = initialState, action) => {
     case 'SIGNUP':
       return action.payload;
     case 'CHECK_LOGIN':
-      return action.payload;
+      return { ...state, ...action.payload };
     default:
       return state;
   }
