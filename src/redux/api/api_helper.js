@@ -43,3 +43,8 @@ export const getClassDetails = async (id) => axios({
   method: 'get',
   url: `${URL}/groups/${id}`,
 });
+
+export const getReservation = async () => axios({
+  method: 'get',
+  url: `${URL}/reservations`,
+});

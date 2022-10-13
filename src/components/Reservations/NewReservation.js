@@ -1,6 +1,8 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import ReservationForm from '../forms/ReservationForm';
 import { newreservation } from '../../redux/newReservationSlice';
 import './reservation.css';
@@ -8,10 +10,28 @@ import imgsvg from './undrow.svg';
 
 const NewReservation = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleForm = (formData) => {
-    const { date, user_id, group_id } = formData;
-    dispatch(newreservation({ date, user_id, group_id }));
+    const {
+      date, group_id, city, user_id,
+    } = formData;
+    dispatch(newreservation({
+      date, group_id, city, user_id,
+    }));
+    navigate('/reservations');
+    toast('Class reserved successfully!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
+
   return (
     <section className="reservations">
       <div className="reservation__container">

@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Final group capstone - Book an Online class - Front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Description
 
-## Available Scripts
+The project we built for the Final Capstone Project is based on an app to book an appointment to attend a online class. We had to follow the given design of the website, but we personalize the content, i.e., instead of booking an appointment to try a motorcycle, we built an app to book an appointment to attend a remote class with a teacher. This was highly encouraged since having unique projects in our portfolio will help us stand out while looking for jobs.
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+- HTML
+- CSS
+- JavaScript
+- React / Redux
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can check the live demo :
 
-### `npm test`
+Not yet available
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- To run this project in your local environment, You will need to have the following tools installed loally :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `NodeJs` with the stable version
+- `npm and/or yarn`
+- `An IDE` VSCode, Atoms ...
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Set up
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `git clone git@github.com:christianbiring1/reserve_classes_front-end.git`
+- `cd reserve_classes_front-end`
+- `npm i`
+- `npm start`
 
-### `npm run eject`
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+👤 **Christian biringanine**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- GitHub: [christianbiring1](https://github.com/christianbiring1)
+- Twitter: [christianbirin4](https://twitter.com/christianbirin4)
+- LinkedIn: [Christian Biringanine](https://linkedin.com/in/christian-biringanine/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+👤 **Jake Felice**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- GitHub: [](https://github.com/)
+- Twitter: [](https://twitter.com/)
+- LinkedIn: [](https://linkedin.com/in//)
 
-## Learn More
+👤 **Bazimungu Pascal**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Github: [](https://github.com/)
+- Linkedin: [](https://www.linkedin.com/in//)
+- Twitter: [](https://twitter.com/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Yussuf Nviiri**
 
-### Code Splitting
+- GitHub: [@yusufnviiri](https://github.com/yusufnviiri)
+- Twitter: [@YNviiri](https://twitter.com/YNviiri)
+- LinkedIn: [yusufnviiri]( https://www.linkedin.com/in/yusuf-nviiri-8b4146206/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contributing
 
-### Analyzing the Bundle Size
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Feel free to check the [issues page](https://github.com/christianbiring1/reserve_classes_front-end/issues).
 
-### Making a Progressive Web App
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Give a ⭐️ if you like this project!
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- We give credit to [Murat Korkmaz](https://www.behance.net/muratk) whom we used his design to bring this project alive
+- Hat tip to Microverse and all its staff for the support and trust they have in each one of us beleiving we can do better
+- Hat tip to anyone who's code was contributed to make this project alive. `Jake, Pascal, Christian and Yussuf`
 
-### Deployment
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.

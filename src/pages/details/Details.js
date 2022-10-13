@@ -6,6 +6,7 @@ import { fetchDetails } from '../../redux/classes/classes';
 import { loading, loaded } from '../../redux/loading/loading';
 import ripple from '../../assets/loading_ripple.svg';
 import { delGroup } from '../../redux/newGroupSlice';
+import { URL } from '../../redux/api/api_helper';
 
 export default function Details() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function Details() {
       {(classDetails.id && !isLoading) && (
         <>
           <div className={styles.image}>
-            <img src={classDetails.image} alt="" />
+            <img src={`${URL}/${classDetails.image.url}`} alt="" />
 
             <Link to="/" className={styles.backButton}>
               <span />

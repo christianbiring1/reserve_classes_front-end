@@ -4,6 +4,7 @@ import { persistReducer } from 'redux-persist';
 import updateSession from './authentication/authentication';
 import updateClasses from './classes/classes';
 import { updateIsLoading } from './loading/loading';
+import updateReservations from './reservations/reservations';
 
 const persistConfig = {
   key: 'session',
@@ -25,6 +26,7 @@ const store = configureStore({
     class: updateClasses,
     loading: updateIsLoading,
     persistedSession,
+    reservation: updateReservations,
   },
   middleware: customizedMiddleware,
 });
