@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Class.module.css';
+import { URL } from '../../redux/api/api_helper';
 
 export default function Class(props) {
   const {
@@ -10,7 +11,7 @@ export default function Class(props) {
   return (
     <div className={styles.class}>
       <Link to={`/class/${id}`}>
-        <img src={image} alt="group" />
+        <img src={`${URL}/${image.url}`} alt="group" />
       </Link>
       <div className={styles.classInfo}>
         <h5>
