@@ -3,14 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className="nav_container">
+    <div className="navigation_menu">
+      <NavLink className="logo" to="/">
+        Classes
+      </NavLink>
       <nav className="nav_menu">
         <ul className="nav_list">
-          <li className="nav_item">
-            <NavLink to="/">
-              CLASSES
-            </NavLink>
-          </li>
           <li className="nav_item">
             <NavLink to="/newreservation">
               RESERVE CLASS

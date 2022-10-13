@@ -23,17 +23,12 @@ function App() {
 
   return (
     <section className="main_container">
-      <header>
-        <h1>Reserve Online classes</h1>
-      </header>
       {isLoggedIn && (
-        <div>
-          <div className="navigation_menu">
-            <Navbar />
-          </div>
+        <div className="nav_container">
+          <Navbar />
         </div>
       )}
-      <div>
+      <div className="main_section">
         {session.status && (
           <h6 className="flash_notice">{session.status}</h6>
         )}
@@ -55,10 +50,6 @@ function App() {
           </Routes>
         )}
       </div>
-      <footer>
-        <p> Made with &#10084;&#65039; by Jake, Pascal, Yussuf and Christian</p>
-        <p>Alright reserved &copy; 2022</p>
-      </footer>
     </section>
   );
 }
