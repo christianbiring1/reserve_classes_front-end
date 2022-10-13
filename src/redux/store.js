@@ -4,11 +4,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import newGroupSlice from './newGroupSlice';
 import groupSlice from './groupSlice';
 import { newReservationSlice } from './newReservationSlice';
-import {reservationSlice} from './reserveSlice'
 
 const store = configureStore({
   reducer: {
-    reserve:reservationSlice,
     groups: groupSlice,
     newgroups: newGroupSlice,
     newrsv: newReservationSlice,
