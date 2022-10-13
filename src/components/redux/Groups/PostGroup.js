@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useReducer } from 'react';
 import { putGroup } from '../../../redux/newGroupSlice';
@@ -9,6 +9,7 @@ const groupForm = {
   description: '',
   rating: 0,
   image: '',
+  user_id: null,
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -47,6 +48,7 @@ function PostGroup() {
   const [formState, dispatch] = useReducer(reducer, groupForm);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const user = useSelector((state) => state.persistedSession.session.user);
 
   const isFormValid = (formState) => {
     if (!formState.image) {
@@ -66,6 +68,7 @@ function PostGroup() {
     formData.append('rating', formState.rating);
     formData.append('image', formState.image);
     formData.append('title', formState.title);
+    formData.append('user_id', user.id);
 
     postToApi(putGroup(formData));
     setTimeout(() => {
