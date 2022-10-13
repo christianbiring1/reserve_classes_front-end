@@ -48,3 +48,11 @@ export const getReservation = async () => axios({
     Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
   },
 });
+
+export const deleteReservation = async (id) => axios({
+  method: 'delete',
+  url: `${URL}/reservations/${id}`,
+  headers: {
+    Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
+  },
+});

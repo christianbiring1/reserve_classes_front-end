@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchReservations } from '../../redux/reservations/reservations';
+import { fetchReservations, cancelReservation } from '../../redux/reservations/reservations';
 import { fetchClasses } from '../../redux/classes/classes';
 
 const Reservation = () => {
@@ -40,7 +40,7 @@ const Reservation = () => {
                 </td>
                 <td>{item.date}</td>
                 <td>{item.city}</td>
-                <td><Link to="delete" className="link-danger">Delete</Link></td>
+                <td><button onClick={() => dispatch(cancelReservation(item.id))} type="button" className="link-danger cancel-button">Cancel</button></td>
               </tr>
             ))
             : (
