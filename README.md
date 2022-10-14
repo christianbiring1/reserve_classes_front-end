@@ -17,7 +17,7 @@
 > Click [here](https://github.com/christianbiring1/reserve_classes_back-end) to view the back end repository.
 
 ## Live Demo
-Not yet available
+[Netlify](https://6348e50f95e5525da6d1c6e5--scintillating-liger-4d35b6.netlify.app/)
 
 ### Prerequisites
 
