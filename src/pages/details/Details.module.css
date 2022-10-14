@@ -1,0 +1,126 @@
+:root {
+  --primary: #97bf11;
+  --secondary: #e2e3e5;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .main button {
+    align-self: center !important;
+  }
+}
+
+.main {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.ripple {
+  margin: auto;
+}
+
+.image {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  border-radius: 10px;
+  transition: all 0.2s ease-out;
+  border-top-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  width: 80%;
+  max-width: 1024px;
+}
+
+.image img:hover {
+  box-shadow: 0 15px 20px #555;
+  transform: scale(1.01);
+}
+
+.backButton {
+  background: var(--primary);
+  align-self: flex-start;
+  margin-top: 5rem;
+  padding: 15px 25px;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+  cursor: pointer;
+}
+
+.backButton span {
+  background: url(../../assets/left-arrow.png) no-repeat center center/cover;
+  display: block;
+  width: 25px;
+  height: 25px;
+  filter: invert(1);
+}
+
+.details {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.info {
+  text-align: center;
+}
+
+.info p {
+  color: #444;
+}
+
+.infoList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoList li {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+}
+
+.infoList li:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserve_btn {
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.main button,
+.reserve_btn {
+  border: none;
+  align-self: flex-end;
+  padding: 0.7rem 2rem;
+  border-radius: 10%;
+  color: #fff;
+  font-weight: 600;
+  background-color: var(--primary);
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

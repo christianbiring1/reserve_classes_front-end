@@ -1,13 +1,146 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Roboto:wght@100;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.reserved_class {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main_container {
+  display: flex;
+  height: 100vh;
+}
+
+.nav_container {
+  width: 15%;
+}
+
+.navigation_menu {
+  border: 1px solid rgba(136, 136, 136, 0.589);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+}
+
+.logo {
+  color: black;
+  text-decoration: none;
+  font-family: 'Rochester', cursive;
+  font-size: 50px;
+  align-self: center;
+}
+
+.main_section {
+  flex: 1;
+}
+
+.nav_menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav_list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav_item a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
+  padding: 0.5rem 1rem;
+  transition: all 0.1s;
+  text-align: center;
+}
+
+.nav_item a:hover {
+  background-color: #97bf0f;
+  color: #fff;
+}
+
+.group_item {
+  background-color: rebeccapurple;
+  margin-bottom: 30px;
+}
+
+.group_item p {
+  margin: 0;
+  padding: 0;
+}
+
+.social_icon {
+  height: 25px;
+  width: 25px;
+  display: block;
+  filter: invert(70%);
+  transition: all 0.1s ease-in;
+}
+
+.social_icon:hover {
+  transform: scale(1.2);
+}
+
+.social_icon.twitter {
+  background: url(./assets/icons/twitter.png) no-repeat center center/cover;
+}
+
+.social_icon.facebook {
+  background: url(./assets/icons/facebook.png) no-repeat center center/cover;
+}
+
+.social_icon.instagram {
+  background: url(./assets/icons/instagram.png) no-repeat center center/cover;
+}
+
+.flash_notice {
+  text-align: center;
+  color: #0088b1;
+}
+
+@media only screen and (max-width: 1023px) {
+  .main_container {
+    flex-direction: column;
+  }
+
+  .navigation_menu {
+    position: relative;
+    width: auto;
+    gap: 1rem;
+  }
+
+  .nav_container {
+    width: auto;
+  }
+
+  .nav_menu {
+    align-items: center;
+  }
+
+  .nav_list {
+    flex-direction: row;
+  }
+
+  .nav_item a {
+    font-weight: 300;
+    padding: 0.25rem 0.5rem;
+  }
 }

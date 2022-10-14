@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Splash from './components/Splash';
+import DashBoard from './pages/dashboard/Dashboard';
+import PostGroup from './components/redux/Groups/PostGroup';
+import Reservation from './components/Reservations/index';
+import NewReservation from './components/Reservations/NewReservation';
+import { sessionIsLoggedIn, updateStatus } from './redux/authentication/authentication';
+import Registration from './pages/auth/Registartion';
+import Details from './pages/details/Details';
+import Navbar from './components/Navbar';
 
 function App() {
+  const dispatch = useDispatch();
+  const session = useSelector((state) => state.persistedSession.session);
+  const isLoggedIn = session.logged_in;
+
+  useEffect(() => {
+    dispatch(sessionIsLoggedIn());
+    dispatch(updateStatus());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="main_container">
+      {isLoggedIn && (
+        <div className="nav_container">
+          <Navbar />
+        </div>
+      )}
+      <div className="main_section">
+        {session.status && (
+          <h6 className="flash_notice">{session.status}</h6>
+        )}
+        {isLoggedIn && (
+          <Routes>
+            <Route exact path="/" element={<DashBoard />} />
+            <Route exact path="/add" element={<PostGroup />} />
+            <Route exact path="/reservations" element={<Reservation />} />
+            <Route exact path="/newreservation" element={<NewReservation />} />
+            <Route exact path="/class/:id" element={<Details />} />
+          </Routes>
+        )}
+        {!isLoggedIn && (
+          <Routes>
+            <Route exact path="/" element={<Splash />} />
+            <Route exact path="/signup" element={<Registration />} />
+            <Route exact path="*" element={<Splash flash />} />
+          </Routes>
+        )}
+      </div>
+    </section>
   );
 }
 

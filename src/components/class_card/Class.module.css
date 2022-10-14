@@ -1,0 +1,59 @@
+:root {
+  --primary: #97bf0f;
+}
+
+.class {
+  padding: 8px;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.1s ease-in;
+}
+
+.class:hover {
+  transform: scale(1.05);
+}
+
+.class img {
+  width: 200px;
+  height: 200px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  transition: all 0.2s ease-out;
+}
+
+.class img:hover {
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.classInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.seperator {
+  border-bottom: 3px #6664 dotted;
+  display: block;
+  width: 50%;
+}
+
+.classInfo h5 {
+  font-weight: 700;
+}
+
+.classInfo p {
+  color: #777;
+  font-size: 14px;
+  text-align: center;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
