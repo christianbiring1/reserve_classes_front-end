@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { sessionLogin } from '../redux/authentication/authentication';
+import styles from './Splash.module.css';
 
 function Splash(props) {
   const emailRef = useRef(null);
@@ -18,12 +19,12 @@ function Splash(props) {
     e.preventDefault();
   };
   return (
-    <div>
+    <div className={styles.main}>
       <h1>Login</h1>
       {flash && (
         <h6 className="flash_warn">You must be logged in to continue.</h6>
       )}
-      <div>
+      <div className={styles.formContainer}>
         <form onSubmit={hanldeSubmit}>
           <input
             type="email"

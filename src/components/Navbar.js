@@ -1,21 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../redux/authentication/authentication';
 
 function Navbar() {
+  const dispatch = useDispatch();
   return (
-    <div className="nav_container">
+    <div className="navigation_menu">
+      <NavLink className="logo" to="/">
+        Classes
+      </NavLink>
       <nav className="nav_menu">
         <ul className="nav_list">
-          <li className="nav_item">
-            <NavLink to="/">
-              CLASSES
-            </NavLink>
-          </li>
-          <li className="nav_item">
-            <NavLink to="/newreservation">
-              RESERVE CLASS
-            </NavLink>
-          </li>
           <li className="nav_item">
             <NavLink to="/reservations">
               MY RESERVATIONS
@@ -27,9 +23,14 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="nav_item">
-            <NavLink to="/">
-              DELETE CLASS
-            </NavLink>
+            <button
+              onClick={() => {
+                dispatch(logout());
+              }}
+              type="button"
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </nav>

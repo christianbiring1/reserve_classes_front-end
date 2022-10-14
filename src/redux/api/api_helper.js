@@ -26,12 +26,9 @@ export const signUp = async (params) => axios({
 export const checkLogin = async () => axios({
   method: 'get',
   url: `${URL}/logged_in`,
-  withCredentials: true,
-});
-
-export const logout = async () => axios({
-  method: 'delete',
-  url: `${URL}/sessions`,
+  headers: {
+    Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
+  },
 });
 
 export const getClasses = async () => axios({
@@ -47,4 +44,15 @@ export const getClassDetails = async (id) => axios({
 export const getReservation = async () => axios({
   method: 'get',
   url: `${URL}/reservations`,
+  headers: {
+    Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
+  },
+});
+
+export const deleteReservation = async (id) => axios({
+  method: 'delete',
+  url: `${URL}/reservations/${id}`,
+  headers: {
+    Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
+  },
 });

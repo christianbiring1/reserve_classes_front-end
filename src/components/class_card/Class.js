@@ -11,7 +11,7 @@ export default function Class(props) {
   return (
     <div className={styles.class}>
       <Link to={`/class/${id}`}>
-        <img src={`${URL}/${image.url}`} alt="group" />
+        <img src={`${URL}/${image}`} alt="group" />
       </Link>
       <div className={styles.classInfo}>
         <h5>

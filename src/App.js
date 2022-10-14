@@ -6,9 +6,8 @@ import DashBoard from './pages/dashboard/Dashboard';
 import PostGroup from './components/redux/Groups/PostGroup';
 import Reservation from './components/Reservations/index';
 import NewReservation from './components/Reservations/NewReservation';
-import { sessionIsLoggedIn } from './redux/authentication/authentication';
+import { sessionIsLoggedIn, updateStatus } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
-import GetGroups from './components/Groups/GetGroups';
 import Details from './pages/details/Details';
 import Navbar from './components/Navbar';
 
@@ -19,21 +18,17 @@ function App() {
 
   useEffect(() => {
     dispatch(sessionIsLoggedIn());
+    dispatch(updateStatus());
   }, []);
 
   return (
     <section className="main_container">
-      <header>
-        <h1>Reserve Online classes</h1>
-      </header>
       {isLoggedIn && (
-        <div>
-          <div className="navigation_menu">
-            <Navbar />
-          </div>
+        <div className="nav_container">
+          <Navbar />
         </div>
       )}
-      <div>
+      <div className="main_section">
         {session.status && (
           <h6 className="flash_notice">{session.status}</h6>
         )}
@@ -43,7 +38,6 @@ function App() {
             <Route exact path="/add" element={<PostGroup />} />
             <Route exact path="/reservations" element={<Reservation />} />
             <Route exact path="/newreservation" element={<NewReservation />} />
-            <Route exact path="/groups" element={<GetGroups />} />
             <Route exact path="/class/:id" element={<Details />} />
           </Routes>
         )}
@@ -55,10 +49,6 @@ function App() {
           </Routes>
         )}
       </div>
-      <footer>
-        <p> Made with &#10084;&#65039; by Jake, Pascal, Yussuf and Christian</p>
-        <p>Alright reserved &copy; 2022</p>
-      </footer>
     </section>
   );
 }

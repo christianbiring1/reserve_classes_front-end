@@ -1,23 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import styles from './Details.module.css';
 import { fetchDetails } from '../../redux/classes/classes';
 import { loading, loaded } from '../../redux/loading/loading';
 import ripple from '../../assets/loading_ripple.svg';
-import { delGroup } from '../../redux/newGroupSlice';
 import { URL } from '../../redux/api/api_helper';
 
 export default function Details() {
-  const navigate = useNavigate();
-
   const dispatch = useDispatch();
   const { id } = useParams();
-  const handleDelete = async (group) => {
-    dispatch(delGroup(group));
-    navigate('/');
-  };
-
   useEffect(() => {
     dispatch(loading());
     dispatch(fetchDetails(id)).then(() => {
@@ -46,19 +38,15 @@ export default function Details() {
             </div>
             <ul className={styles.infoList}>
               <li>
+                <span>Name: </span>
+                <span>{classDetails.name}</span>
+              </li>
+              <li>
                 <span>Rating: </span>
                 <span>{classDetails.rating}</span>
               </li>
             </ul>
             <div className={styles.btns}>
-              <button
-                type="button"
-                onClick={() => handleDelete(classDetails.id)}
-              >
-                {' '}
-                Remove
-
-              </button>
               <Link to="/newreservation" className={styles.reserve_btn} state={{ group_id: classDetails.id }}>Reserve</Link>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useReducer } from 'react';
 import { putGroup } from '../../../redux/newGroupSlice';
+import styles from './PostGroup.module.css';
 
 const groupForm = {
   name: '',
@@ -78,10 +79,10 @@ function PostGroup() {
 
   return (
 
-    <div>
+    <div className={styles.main}>
+      <h1>Create your own class</h1>
       <form onSubmit={handleSubmit}>
-        <h1>ADD NEW GROUP</h1>
-        <div className="form">
+        <div className={styles.form}>
           <input
             type="text"
             name="title"

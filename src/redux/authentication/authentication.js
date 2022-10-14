@@ -3,11 +3,13 @@ import * as apiHelper from '../api/api_helper';
 const login = (payload) => ({ type: 'LOGIN', payload });
 const signUp = (payload) => ({ type: 'SIGNUP', payload });
 const checkLogin = (payload) => ({ type: 'CHECK_LOGIN', payload });
+export const logout = (payload) => ({ type: 'LOG_OUT', payload });
+export const updateStatus = (payload) => ({ type: 'UPDATE_STATUS', payload });
 
 const initialState = {
   logged_in: false,
   user: {},
-  error: '',
+  token: null,
 };
 
 export const sessionLogin = (payload) => async (dispatch) => {
@@ -50,7 +52,15 @@ const updateSession = (state = initialState, action) => {
     case 'SIGNUP':
       return action.payload;
     case 'CHECK_LOGIN':
-      return action.payload;
+      return { ...state, ...action.payload };
+    case 'LOG_OUT':
+      return {
+        logged_in: false,
+        user: {},
+        token: null,
+      };
+    case 'UPDATE_STATUS':
+      return { ...state, status: null };
     default:
       return state;
   }

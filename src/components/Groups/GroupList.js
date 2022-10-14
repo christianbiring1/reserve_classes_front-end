@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { base, delGroup } from '../../redux/newGroupSlice';
+import { delGroup } from '../../redux/newGroupSlice';
 import { fetchGroups } from '../../redux/groupSlice';
+import { URL as base } from '../../redux/api/api_helper';
 
 function GroupList(props) {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function GroupList(props) {
           type="button"
         >
           {' '}
-          Edit
+          Edit Class
 
         </button>
       </div>

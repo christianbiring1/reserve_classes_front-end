@@ -2,27 +2,27 @@
 /* eslint-disable  */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { URL } from './api/api_helper';
 
 const initialState = {
   groups: [],
 
 };
- export const base='http://localhost:3001'
 
 
 export const postGrp = async (group) => axios({
   method: 'post',
-  url: `${base}/groups`,
+  url: `${URL}/groups`,
   headers: {
-    Authorization: `Bearer ${localStorage.getItem('token')}`,
+    Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
   },
   data: group,
 });
 export const deleteGrp = async (group) => axios({
   method: 'delete',
-  url: `${base}/groups/${group}`,
+  url: `${URL}/groups/${group}`,
   headers: {
-    Authorization: `Bearer ${localStorage.getItem('token')}`,
+    Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
   },
 });
 export const delGroup = createAsyncThunk(
