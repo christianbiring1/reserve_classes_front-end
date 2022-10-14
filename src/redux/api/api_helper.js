@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const URL = 'http://localhost:3001';
+export const URL = 'https://calm-mesa-77347.herokuapp.com';
 
 export const login = async (params) => axios({
   method: 'post',
