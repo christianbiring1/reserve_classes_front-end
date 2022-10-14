@@ -14,7 +14,7 @@ export const postGrp = async (group) => axios({
   method: 'post',
   url: `${URL}/groups`,
   headers: {
-    Authorization: `Bearer ${localStorage.getItem('token')}`,
+    Authorization: `Bearer ${JSON.parse(JSON.parse(localStorage['persist:session']).session).token}`,
   },
   data: group,
 });

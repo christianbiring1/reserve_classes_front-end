@@ -4,6 +4,7 @@ const login = (payload) => ({ type: 'LOGIN', payload });
 const signUp = (payload) => ({ type: 'SIGNUP', payload });
 const checkLogin = (payload) => ({ type: 'CHECK_LOGIN', payload });
 export const logout = (payload) => ({ type: 'LOG_OUT', payload });
+export const updateStatus = (payload) => ({ type: 'UPDATE_STATUS', payload });
 
 const initialState = {
   logged_in: false,
@@ -58,6 +59,8 @@ const updateSession = (state = initialState, action) => {
         user: {},
         token: null,
       };
+    case 'UPDATE_STATUS':
+      return { ...state, status: null };
     default:
       return state;
   }

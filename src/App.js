@@ -6,7 +6,7 @@ import DashBoard from './pages/dashboard/Dashboard';
 import PostGroup from './components/redux/Groups/PostGroup';
 import Reservation from './components/Reservations/index';
 import NewReservation from './components/Reservations/NewReservation';
-import { sessionIsLoggedIn } from './redux/authentication/authentication';
+import { sessionIsLoggedIn, updateStatus } from './redux/authentication/authentication';
 import Registration from './pages/auth/Registartion';
 import Details from './pages/details/Details';
 import Navbar from './components/Navbar';
@@ -18,6 +18,7 @@ function App() {
 
   useEffect(() => {
     dispatch(sessionIsLoggedIn());
+    dispatch(updateStatus());
   }, []);
 
   return (
