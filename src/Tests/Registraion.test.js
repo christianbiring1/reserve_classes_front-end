@@ -5,14 +5,14 @@ import Registration from '../pages/auth/Registartion';
 import store from '../redux/configureStore';
 
 describe('Reserve page tests', () => {
-    it('renders correctly', () => {
-        const tree = render(
-            <Provider store={store}>
-                <BrowserRouter>
-                    <Registration />
-                </BrowserRouter>
-            </Provider>,
-        );
-        expect(tree).toMatchSnapshot();
-    });
+  it('renders correctly', () => {
+    const tree = render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Registration />
+        </BrowserRouter>
+      </Provider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
 });
