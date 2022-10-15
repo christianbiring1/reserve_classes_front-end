@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -37,8 +38,8 @@ export default function Class(props) {
 }
 
 Class.propTypes = {
-  id: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  id: PropTypes.number,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  title: PropTypes.string,
 };
